@@ -69,15 +69,41 @@
 </head>
 <body>
 
-  <!-- LOADER -->
-  <div class="loader" id="loader">
-    <div class="loader-inner">
-      <div class="loader-logo"><span class="logo-prefix">sys</span><span class="logo-slash">/</span><span class="logo-name">nabeel</span><span class="loader-blink">_</span></div>
-      <div class="loader-lines" id="loaderLines"></div>
-      <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
-      <div class="loader-status" id="loaderStatus">booting...</div>
-      <button class="loader-skip" id="loaderSkip" type="button">Skip intro</button>
+  <!-- BOOT LOADER -->
+  <div class="loader" id="loader" role="status" aria-label="Loading portfolio">
+    <div class="ld-floor" aria-hidden="true"></div>
+    <div class="ld-glow" aria-hidden="true"></div>
+    <div class="ld-scan" aria-hidden="true"></div>
+
+    <div class="ld-top" aria-hidden="true">
+      <span class="ld-brand">NABEEL<i>/</i>OS <em>v2.0</em></span>
+      <span class="ld-tag">BOOT SEQUENCE</span>
+      <span class="ld-t" id="ldT">T+0.00s</span>
     </div>
+
+    <div class="ld-log" id="ldLog" aria-hidden="true"></div>
+
+    <div class="ld-core">
+      <div class="ld-ring" aria-hidden="true">
+        <svg viewBox="0 0 240 240">
+          <defs>
+            <linearGradient id="ldGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a4eff"/><stop offset="1" stop-color="#00c8ff"/></linearGradient>
+          </defs>
+          <circle class="ld-r-ticks" cx="120" cy="120" r="112"/>
+          <circle class="ld-r-dash" cx="120" cy="120" r="98"/>
+          <circle class="ld-r-track" cx="120" cy="120" r="86"/>
+          <circle class="ld-r-prog" id="ldProg" cx="120" cy="120" r="86"/>
+        </svg>
+        <div class="ld-center">
+          <div class="ld-logo" id="ldLogo"><span class="logo-prefix">sys</span><span class="logo-slash">/</span><span class="logo-name">nabeel</span><span class="loader-blink">_</span></div>
+          <div class="ld-pct" id="ldPct">000%</div>
+        </div>
+      </div>
+      <div class="ld-stage" id="ldStage">POST · power-on self test</div>
+      <div class="ld-welcome" id="ldWelcome" aria-hidden="true">ACCESS GRANTED <span>·</span> welcome, visitor</div>
+    </div>
+
+    <button class="loader-skip" id="loaderSkip" type="button">Skip intro <kbd>Esc</kbd></button>
   </div>
 
   <a href="#main-content" class="skip-link">Skip to content</a>
@@ -85,35 +111,29 @@
   <div class="cursor" id="cursor"></div>
   <div class="cursor-follower" id="cursorFollower"></div>
 
-  <!-- NAVBAR -->
-  <header class="navbar" id="navbar">
+  <!-- MENU BAR -->
+  <header class="navbar menubar" id="navbar">
     <div class="nav-container">
-      <a href="#hero" class="logo">
+      <a href="#hero" class="logo" aria-label="Home">
         <span class="logo-prefix">sys</span><span class="logo-slash">/</span><span class="logo-name">nabeel</span><span class="logo-cursor-blink">_</span>
       </a>
-      <nav class="nav-links" id="navLinks">
-        <a href="#hero" class="nav-item"><span class="nav-num">00.</span>Home</a>
-        <a href="#about" class="nav-item"><span class="nav-num">01.</span>About</a>
-        <a href="#services" class="nav-item"><span class="nav-num">02.</span>Services</a>
-        <a href="#projects" class="nav-item"><span class="nav-num">03.</span>Projects</a>
-        <a href="#experience" class="nav-item"><span class="nav-num">04.</span>Experience</a>
-        <a href="#leadership" class="nav-item"><span class="nav-num">05.</span>Leadership</a>
+      <span class="mb-app" id="mbApp">home.app</span>
+      <div class="mb-right">
+        <button type="button" class="mb-btn" id="paletteBtn" aria-label="Open command palette" aria-haspopup="dialog"><i class="fas fa-magnifying-glass"></i><span class="mb-btn-txt">Search</span><kbd>Ctrl K</kbd></button>
+        <span class="mb-clock" title="Time in the UK"><span class="mb-clock-tz">UK</span> <time id="mbClock">--:--</time></span>
         <a href="#contact" class="btn-nav-cta"><i class="fas fa-terminal"></i> Contact</a>
-      </nav>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      </div>
     </div>
   </header>
 
   <main id="main-content">
 
   <!-- HERO -->
-  <section class="hero" id="hero">
+  <section class="hero" id="hero" data-app="home.app">
     <canvas id="particleCanvas"></canvas>
     <div class="hero-inner">
       <div class="hero-left">
-        <div class="hero-status">
+        <div class="hero-status" data-depth="10">
           <span class="status-dot"></span>
           <span id="statusText" class="status-text">Open to AI engineering roles · UK and remote</span>
         </div>
@@ -121,19 +141,19 @@
           <span class="eyebrow-bar"></span>
           <span class="eyebrow-text">AI ENGINEER · TECHNICAL LEAD</span>
         </div>
-        <h1 class="hero-title">
+        <h1 class="hero-title" data-depth="16">
           <span class="ht-line">Mohammad</span>
           <span class="ht-line ht-accent">Nabeel</span>
           <span class="ht-line">Sohail</span>
         </h1>
-        <p class="hero-tagline">I build AI and Web Solutions that run in Production.</p>
+        <p class="hero-tagline" data-depth="8">I build AI and Web Solutions that run in Production.</p>
         <div class="hero-cta-row">
           <a href="#projects" class="btn-primary-dark"><span>View My Work</span><i class="fas fa-arrow-right"></i></a>
           <a href="NabeelSohail-CV.pdf" class="btn-ghost-dark" download><i class="fas fa-download"></i> Download CV</a>
         </div>
       </div>
       <div class="hero-right">
-        <div class="hud-frame">
+        <div class="hud-frame" data-tilt="6" data-depth="-14">
           <div class="hud-corner hc-tl"></div>
           <div class="hud-corner hc-tr"></div>
           <div class="hud-corner hc-bl"></div>
@@ -158,8 +178,14 @@
 
 
   <!-- ABOUT -->
-  <section class="about" id="about" aria-labelledby="about-title">
+  <section class="about" id="about" data-app="about.app" aria-labelledby="about-title">
     <div class="container">
+      <div class="win reveal" data-win>
+        <div class="win-bar">
+          <span class="win-dots" aria-hidden="true"><span class="wd wd-r"></span><span class="wd wd-y"></span><span class="wd wd-g"></span></span>
+          <span class="win-title">about.app</span><span class="win-meta">~/nabeel/about</span>
+        </div>
+        <div class="win-body"><div class="win-inner">
       <div class="about-grid2">
         <div class="about-main reveal">
           <div class="sec-head sec-head--left">
@@ -214,13 +240,21 @@
           <p class="about-body">At SSUET I was Vice Chair of both IEEE and ACM, led communications for GDGoC, directed and mentored at SMEC, and served on the core team for NASA Space Apps Karachi. I believe in quality over quantity, in friendships, in code and in impact, and in purpose over prestige.</p>
         </article>
       </div>
+        </div></div>
+      </div>
     </div>
   </section>
 
 
   <!-- WHAT I DO -->
-  <section class="services" id="services" aria-labelledby="svc-title">
+  <section class="services" id="services" data-app="services.app" aria-labelledby="svc-title">
     <div class="container">
+      <div class="win reveal" data-win>
+        <div class="win-bar">
+          <span class="win-dots" aria-hidden="true"><span class="wd wd-r"></span><span class="wd wd-y"></span><span class="wd wd-g"></span></span>
+          <span class="win-title">services.app</span><span class="win-meta">~/nabeel/services</span>
+        </div>
+        <div class="win-body"><div class="win-inner">
       <div class="sec-head reveal">
         <div class="sh-meta"><span class="sh-idx">02</span><span class="sh-rule"></span></div>
         <h2 id="svc-title">How I Can <span class="accent">Help</span></h2>
@@ -258,13 +292,21 @@
           <a href="#contactForm" class="btn-ghost-dark offer-cta" data-subject="Collaboration">Collaborate <i class="fas fa-arrow-right"></i></a>
         </article>
       </div>
+        </div></div>
+      </div>
     </div>
   </section>
 
 
   <!-- PROJECTS -->
-  <section class="projects" id="projects">
+  <section class="projects" id="projects" data-app="projects.app">
     <div class="container">
+      <div class="win reveal" data-win>
+        <div class="win-bar">
+          <span class="win-dots" aria-hidden="true"><span class="wd wd-r"></span><span class="wd wd-y"></span><span class="wd wd-g"></span></span>
+          <span class="win-title">projects.app</span><span class="win-meta">~/nabeel/projects</span>
+        </div>
+        <div class="win-body"><div class="win-inner">
       <div class="sec-head reveal">
         <div class="sh-meta"><span class="sh-idx">03</span><span class="sh-rule"></span></div>
         <h2>Featured <span class="accent">Projects</span></h2>
@@ -477,14 +519,22 @@
         </div>
 
       </div>
+        </div></div>
+      </div>
     </div>
   </section>
 
 
 
   <!-- EXPERIENCE -->
-  <section class="experience" id="experience">
+  <section class="experience" id="experience" data-app="experience.app">
     <div class="container">
+      <div class="win reveal" data-win>
+        <div class="win-bar">
+          <span class="win-dots" aria-hidden="true"><span class="wd wd-r"></span><span class="wd wd-y"></span><span class="wd wd-g"></span></span>
+          <span class="win-title">experience.app</span><span class="win-meta">~/nabeel/experience</span>
+        </div>
+        <div class="win-body"><div class="win-inner">
       <div class="sec-head reveal">
         <div class="sh-meta"><span class="sh-idx">04</span><span class="sh-rule"></span></div>
         <h2>Professional <span class="accent">Experience</span></h2>
@@ -611,14 +661,22 @@
         </div>
       </div>
       <div class="sec-cta reveal"><a href="NabeelSohail-CV.pdf" class="btn-ghost-dark" download>Download Full CV <i class="fas fa-download"></i></a></div>
+        </div></div>
+      </div>
     </div>
   </section>
 
 
 
   <!-- RECOMMENDATIONS -->
-  <section class="recs" id="recommendations" aria-labelledby="recs-title">
+  <section class="recs" id="recommendations" data-app="reviews.app" aria-labelledby="recs-title">
     <div class="container">
+      <div class="win reveal" data-win>
+        <div class="win-bar">
+          <span class="win-dots" aria-hidden="true"><span class="wd wd-r"></span><span class="wd wd-y"></span><span class="wd wd-g"></span></span>
+          <span class="win-title">reviews.app</span><span class="win-meta">~/nabeel/reviews</span>
+        </div>
+        <div class="win-body"><div class="win-inner">
       <div class="sec-head reveal">
         <div class="sh-meta"><span class="sh-idx">05</span><span class="sh-rule"></span></div>
         <h2 id="recs-title">What Colleagues <span class="accent">Say</span></h2>
@@ -655,13 +713,21 @@
         <p class="qm-meta" id="qmMeta"></p>
       </dialog>
       <div class="sec-cta reveal"><a href="https://www.linkedin.com/in/nabeeldevai/" class="btn-ghost-dark" target="_blank" rel="noopener noreferrer">Read all recommendations on LinkedIn <i class="fas fa-arrow-up-right-from-square"></i></a></div>
+        </div></div>
+      </div>
     </div>
   </section>
 
 
   <!-- LEADERSHIP -->
-  <section class="leadership" id="leadership">
+  <section class="leadership" id="leadership" data-app="leadership.app">
     <div class="container">
+      <div class="win reveal" data-win>
+        <div class="win-bar">
+          <span class="win-dots" aria-hidden="true"><span class="wd wd-r"></span><span class="wd wd-y"></span><span class="wd wd-g"></span></span>
+          <span class="win-title">leadership.app</span><span class="win-meta">~/nabeel/leadership</span>
+        </div>
+        <div class="win-body"><div class="win-inner">
       <div class="sec-head reveal">
         <div class="sh-meta"><span class="sh-idx">06</span><span class="sh-rule"></span></div>
         <h2>Leadership & <span class="accent">Community</span></h2>
@@ -711,14 +777,22 @@
           <div class="cborder"></div>
         </div>
       </div>
+        </div></div>
+      </div>
     </div>
   </section>
 
 
 
   <!-- WHY ME -->
-  <section class="why-me" id="why-me">
+  <section class="why-me" id="why-me" data-app="why-me.app">
     <div class="container">
+      <div class="win reveal" data-win>
+        <div class="win-bar">
+          <span class="win-dots" aria-hidden="true"><span class="wd wd-r"></span><span class="wd wd-y"></span><span class="wd wd-g"></span></span>
+          <span class="win-title">why-me.app</span><span class="win-meta">~/nabeel/why-me</span>
+        </div>
+        <div class="win-body"><div class="win-inner">
       <div class="sec-head reveal">
         <div class="sh-meta"><span class="sh-idx">07</span><span class="sh-rule"></span></div>
         <h2>Why <span class="accent">Work With Me</span></h2>
@@ -750,14 +824,22 @@
           <p>From experimentation to stable, monitored, production-grade systems — I close the loop.</p>
         </div>
       </div>
+        </div></div>
+      </div>
     </div>
   </section>
 
 
 
   <!-- TECH STACK -->
-  <section class="techstack" id="stack" aria-labelledby="stack-title">
+  <section class="techstack" id="stack" data-app="stack.app" aria-labelledby="stack-title">
     <div class="container">
+      <div class="win reveal" data-win>
+        <div class="win-bar">
+          <span class="win-dots" aria-hidden="true"><span class="wd wd-r"></span><span class="wd wd-y"></span><span class="wd wd-g"></span></span>
+          <span class="win-title">stack.app</span><span class="win-meta">~/nabeel/stack</span>
+        </div>
+        <div class="win-body"><div class="win-inner">
       <div class="sec-head reveal">
         <div class="sh-meta"><span class="sh-idx">08</span><span class="sh-rule"></span></div>
         <h2 id="stack-title">Technologies I <span class="accent">Work With</span></h2>
@@ -804,13 +886,21 @@
         </div>
       </div>
       </div>
+        </div></div>
+      </div>
     </div>
   </section>
 
 
   <!-- EDUCATION & CERTIFICATIONS -->
-  <section class="edu-certs" id="education">
+  <section class="edu-certs" id="education" data-app="education.app">
     <div class="container">
+      <div class="win reveal" data-win>
+        <div class="win-bar">
+          <span class="win-dots" aria-hidden="true"><span class="wd wd-r"></span><span class="wd wd-y"></span><span class="wd wd-g"></span></span>
+          <span class="win-title">education.app</span><span class="win-meta">~/nabeel/education</span>
+        </div>
+        <div class="win-body"><div class="win-inner">
       <div class="sec-head reveal">
         <div class="sh-meta"><span class="sh-idx">09</span><span class="sh-rule"></span></div>
         <h2>Education & <span class="accent">Certifications</span></h2>
@@ -912,17 +1002,25 @@
           </div>
         </div>
       </div>
+        </div></div>
+      </div>
     </div>
   </section>
 
 
 
   <!-- CONTACT -->
-  <section class="cta-sec contact-sec" id="contact">
+  <section class="cta-sec contact-sec" id="contact" data-app="contact.app">
     <div class="cta-bg-grid"></div>
     <div class="cta-glow-l"></div>
     <div class="cta-glow-r"></div>
     <div class="container">
+      <div class="win reveal" data-win>
+        <div class="win-bar">
+          <span class="win-dots" aria-hidden="true"><span class="wd wd-r"></span><span class="wd wd-y"></span><span class="wd wd-g"></span></span>
+          <span class="win-title">contact.app</span><span class="win-meta">~/nabeel/contact</span>
+        </div>
+        <div class="win-body"><div class="win-inner">
       <div class="sec-head reveal">
         <div class="sh-meta"><span class="sh-idx">10</span><span class="sh-rule"></span></div>
         <h2>Let's <span class="accent">Connect</span></h2>
@@ -1034,6 +1132,8 @@
           </form>
         </div>
       </div>
+        </div></div>
+      </div>
     </div>
   </section>
 
@@ -1055,6 +1155,28 @@
 
 
   <!-- BACK TO TOP -->
+  <nav class="dock" id="dock" aria-label="Sections">
+    <a class="dock-item" href="#hero" data-sec="hero"><i class="fas fa-house"></i><span class="dock-tip">Home</span></a>
+    <span class="dock-sep" aria-hidden="true"></span>
+    <a class="dock-item" href="#about" data-sec="about"><i class="fas fa-user"></i><span class="dock-tip">About</span></a>
+    <a class="dock-item" href="#services" data-sec="services"><i class="fas fa-handshake"></i><span class="dock-tip">Services</span></a>
+    <a class="dock-item" href="#projects" data-sec="projects"><i class="fas fa-folder-open"></i><span class="dock-tip">Projects</span></a>
+    <a class="dock-item" href="#experience" data-sec="experience"><i class="fas fa-briefcase"></i><span class="dock-tip">Experience</span></a>
+    <a class="dock-item" href="#recommendations" data-sec="recommendations"><i class="fas fa-comments"></i><span class="dock-tip">Reviews</span></a>
+    <a class="dock-item" href="#leadership" data-sec="leadership"><i class="fas fa-users"></i><span class="dock-tip">Leadership</span></a>
+    <a class="dock-item" href="#why-me" data-sec="why-me"><i class="fas fa-star"></i><span class="dock-tip">Why me</span></a>
+    <a class="dock-item" href="#stack" data-sec="stack"><i class="fas fa-layer-group"></i><span class="dock-tip">Stack</span></a>
+    <a class="dock-item" href="#education" data-sec="education"><i class="fas fa-graduation-cap"></i><span class="dock-tip">Education</span></a>
+    <span class="dock-sep" aria-hidden="true"></span>
+    <a class="dock-item" href="#contact" data-sec="contact"><i class="fas fa-envelope"></i><span class="dock-tip">Contact</span></a>
+  </nav>
+
+  <dialog class="palette" id="palette" aria-label="Command palette">
+    <div class="pal-head"><i class="fas fa-terminal" aria-hidden="true"></i><input type="text" id="palInput" placeholder="Go to a section or run an action..." autocomplete="off" spellcheck="false" aria-label="Search commands" role="combobox" aria-expanded="true" aria-controls="palList"><kbd>Esc</kbd></div>
+    <ul class="pal-list" id="palList" role="listbox"></ul>
+    <div class="pal-foot"><span><kbd>↑</kbd><kbd>↓</kbd> navigate</span><span><kbd>Enter</kbd> run</span></div>
+  </dialog>
+
   <button class="back-top" id="backTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
   <script src="js/script.js"></script>

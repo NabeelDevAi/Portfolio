@@ -20,6 +20,15 @@
         ],
         "createdAt": "2026-10-16T12:23:28.187Z",
         "reason": "Mono console labels (stack layer names, About sub-labels, case-study labels) are deliberately small h3/h4 headings; real hierarchy comes from the display h2 titles."
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-16T12:51:45.125Z",
+        "reason": "You asked for the original glowing deep-space tech look back; glow is state feedback and part of the boot loader and OS chrome."
       }
     ]
   }
