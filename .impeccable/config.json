@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "css/style.css"
+        ],
+        "createdAt": "2026-10-16T08:26:07.528Z",
+        "reason": "user asked to restore the original glowing tech-terminal look; glow is the state feedback signature"
+      }
+    ]
+  }
+}

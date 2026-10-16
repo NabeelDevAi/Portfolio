@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-16T00:00:00Z",
+  "title": "Design System: Nabeel Sohail Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "void": {"role": "neutral", "displayName": "Void", "canonical": "#050a0f"},
+      "signal-blue": {"role": "primary", "displayName": "Signal Blue", "canonical": "#3a4eff"},
+      "cyan-beam": {"role": "secondary", "displayName": "Cyan Beam", "canonical": "#00c8ff"},
+      "text-tertiary": {"role": "neutral", "displayName": "Text Tertiary", "canonical": "#7088a8"}
+    },
+    "typographyMeta": {
+      "display": {"displayName": "Display", "purpose": "Hero name."},
+      "label": {"displayName": "Label", "purpose": "Nav, buttons, tags, stage labels."}
+    },
+    "shadows": [
+      {"name": "signal-glow", "value": "0 0 20px #1c83eb40", "purpose": "Hover feedback."},
+      {"name": "card-lift", "value": "0 24px 60px rgba(0,0,0,0.4), 0 0 40px #1c83eb40", "purpose": "Card hover."}
+    ],
+    "motion": [
+      {"name": "ease", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "State transitions."}
+    ],
+    "breakpoints": [
+      {"name": "xl", "value": "1100px"},
+      {"name": "lg", "value": "992px"},
+      {"name": "md", "value": "768px"},
+      {"name": "sm", "value": "480px"}
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button", "kind": "button", "refersTo": "button-primary",
+      "description": "Main call to action.",
+      "html": "<button class='ds-btn'>View My Work</button>",
+      "css": ".ds-btn{padding:14px 28px;background:#3a4eff;color:#050a0f;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;border:0;border-radius:6px;cursor:pointer;transition:all .3s}.ds-btn:hover,.ds-btn:focus-visible{transform:translateY(-2px);box-shadow:0 0 30px #1c83eb40,0 8px 24px rgba(0,0,0,.4)}"
+    },
+    {
+      "name": "Ghost Button", "kind": "button", "refersTo": "button-ghost",
+      "description": "Secondary action.",
+      "html": "<button class='ds-ghost'>Download CV</button>",
+      "css": ".ds-ghost{padding:13px 28px;background:transparent;color:#3a4eff;font-family:'JetBrains Mono',monospace;font-size:13px;border:1px solid #6c63ff26;border-radius:6px;cursor:pointer;transition:all .3s}.ds-ghost:hover,.ds-ghost:focus-visible{background:#3a4eff1f;border-color:#3a4eff;transform:translateY(-2px)}"
+    },
+    {
+      "name": "Pipeline Node", "kind": "custom", "refersTo": "pipeline-node",
+      "description": "One stage in the How I Build diagram.",
+      "html": "<div class='ds-node'><span class='ds-k'>RETRIEVE</span><span class='ds-t'>Hybrid search + reranking</span></div>",
+      "css": ".ds-node{display:flex;flex-direction:column;gap:8px;padding:18px;background:#0d1520;border:1px solid #6c63ff26;border-radius:8px}.ds-k{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:1.5px;color:#00c8ff}.ds-t{font-size:14px;color:#8a9bb5;line-height:1.5}"
+    },
+    {
+      "name": "Nav Item", "kind": "nav", "refersTo": "nav-item",
+      "description": "Mono nav link with index.",
+      "html": "<a class='ds-nav' href='#'><span>01.</span>About</a>",
+      "css": ".ds-nav{display:inline-flex;gap:4px;padding:7px 14px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#8a9bb5;border-radius:4px;text-decoration:none}.ds-nav span{color:#3a4eff;opacity:.6;font-size:10px}.ds-nav:hover,.ds-nav:focus-visible{color:#e2eaf4;background:rgba(255,255,255,.03)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Mission Console",
+    "overview": "A console in a dark room: near-black navy surfaces, one electric-blue signal color, mono labels, a boot loader and a terminal readout.",
+    "keyCharacteristics": ["Dark-only", "One signal blue", "Mono labels and numbered sections", "Technical diagrams as content", "Glow as state feedback"],
+    "rules": [
+      {"name": "The One Signal Rule", "body": "Signal Blue is the only color that means interactive.", "section": "colors"},
+      {"name": "The Mono Is Metadata Rule", "body": "Mono is for labels, code and data, never paragraphs.", "section": "typography"},
+      {"name": "The Glow-as-Signal Rule", "body": "Glow means this responds to you.", "section": "elevation"}
+    ],
+    "dos": ["Do keep Signal Blue the only interactive color.", "Do honor prefers-reduced-motion in CSS and JS."],
+    "donts": ["Don't add light-mode surfaces.", "Don't set paragraphs in mono.", "Don't use emoji as icons or flags."]
+  }
+}

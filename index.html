@@ -4,20 +4,20 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mohammad Nabeel Sohail — Senior AI Engineer & Team Lead</title>
+  <script>document.documentElement.className += ' js';</script>
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
-  <link rel="icon" type="image/png" href="favicon.png"/>
 
   <!-- SEO -->
-  <meta name="description" content="Mohammad Nabeel Sohail — Senior AI Engineer & Team Lead at FTech Solutions. Building enterprise-grade LLMs, RAG pipelines, and agentic AI systems at scale. British national based in Karachi, open to international opportunities."/>
-  <meta name="keywords" content="AI Engineer, GenAI, LLM, RAG, Agentic AI, Full Stack, Python, Django, FastAPI, MERN, Karachi, Pakistan, British, Senior AI Engineer"/>
+  <meta name="description" content="Mohammad Nabeel Sohail — Senior AI Engineer & Team Lead at FTech Solutions. Building production LLMs, RAG pipelines, and agentic AI systems at scale. British national based in Middlesbrough, UK, open to roles and projects worldwide."/>
+  <meta name="keywords" content="AI Engineer, GenAI, LLM, RAG, Agentic AI, Full Stack, Python, Django, FastAPI, MERN, Middlesbrough, UK, British, Senior AI Engineer"/>
   <meta name="author" content="Mohammad Nabeel Sohail"/>
   <link rel="canonical" href="https://nabeelsohail-30.github.io/Portfolio/"/>
 
   <!-- Open Graph -->
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="Mohammad Nabeel Sohail — Senior AI Engineer & Team Lead"/>
-  <meta property="og:description" content="Building enterprise-grade AI systems used by millions. LLMs · RAG · Agentic AI · Full Stack. British national, open to international roles."/>
+  <meta property="og:description" content="Building production AI systems used by millions. LLMs · RAG · Agentic AI · Full Stack. British national, open to roles worldwide."/>
   <meta property="og:image" content="https://nabeelsohail-30.github.io/Portfolio/og-image.png"/>
   <meta property="og:url" content="https://nabeelsohail-30.github.io/Portfolio/"/>
   <meta property="og:site_name" content="Nabeel Sohail — Portfolio"/>
@@ -47,8 +47,8 @@
     "nationality": "British",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Karachi",
-      "addressCountry": "PK"
+      "addressLocality": "Middlesbrough",
+      "addressCountry": "GB"
     }
   }
   </script>
@@ -77,6 +77,7 @@
       <div class="loader-lines" id="loaderLines"></div>
       <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
       <div class="loader-status" id="loaderStatus">booting...</div>
+      <button class="loader-skip" id="loaderSkip" type="button">Skip intro</button>
     </div>
   </div>
 
@@ -84,8 +85,6 @@
 
   <div class="cursor" id="cursor"></div>
   <div class="cursor-follower" id="cursorFollower"></div>
-  <div class="scanline-sweep" id="scanline"></div>
-  <div class="noise-overlay"></div>
 
   <!-- NAVBAR -->
   <header class="navbar" id="navbar">
@@ -95,10 +94,11 @@
       </a>
       <nav class="nav-links" id="navLinks">
         <a href="#hero" class="nav-item"><span class="nav-num">00.</span>Home</a>
-        <a href="#about" class="nav-item"><span class="nav-num">01.</span>About</a>
-        <a href="#experience" class="nav-item"><span class="nav-num">02.</span>Experience</a>
-        <a href="#projects" class="nav-item"><span class="nav-num">03.</span>Projects</a>
+        <a href="#projects" class="nav-item"><span class="nav-num">01.</span>Projects</a>
+        <a href="#architecture" class="nav-item"><span class="nav-num">02.</span>Build</a>
+        <a href="#experience" class="nav-item"><span class="nav-num">03.</span>Experience</a>
         <a href="#leadership" class="nav-item"><span class="nav-num">04.</span>Leadership</a>
+        <a href="#about" class="nav-item"><span class="nav-num">05.</span>About</a>
         <a href="#contact" class="btn-nav-cta"><i class="fas fa-terminal"></i> Contact</a>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -116,17 +116,22 @@
       <div class="hero-left">
         <div class="hero-status">
           <span class="status-dot"></span>
-          <span id="statusText" class="status-text">Initializing profile...</span>
+          <span id="statusText" class="status-text">Open to roles and projects worldwide · Middlesbrough, UK</span>
         </div>
         <div class="hero-eyebrow">
           <span class="eyebrow-bar"></span>
-          <span class="eyebrow-text">AI TEAM LEAD · SENIOR ENGINEER · BUILDER</span>
+          <span class="eyebrow-text">AI TEAM LEAD · SENIOR ENGINEER</span>
         </div>
         <h1 class="hero-title">
           <span class="ht-line">Mohammad</span>
           <span class="ht-line ht-accent">Nabeel</span>
           <span class="ht-line">Sohail</span>
         </h1>
+        <p class="hero-desc">I lead the AI team at FTech Solutions, building LLM, RAG and agentic systems used by millions of people, and the full-stack software around them. British national, based in the UK.</p>
+        <div class="hero-cta-row">
+          <a href="#projects" class="btn-primary-dark"><span>View My Work</span><i class="fas fa-arrow-right"></i></a>
+          <a href="NabeelSohail-CV.pdf" class="btn-ghost-dark" download><i class="fas fa-download"></i> Download CV</a>
+        </div>
         <div class="hero-terminal">
           <div class="term-bar">
             <span class="tc tc-r"></span><span class="tc tc-y"></span><span class="tc tc-g"></span>
@@ -140,18 +145,6 @@
             <div class="term-output" id="termOutput"></div>
           </div>
         </div>
-        <p class="hero-desc">I architect and ship enterprise-grade AI systems — LLMs, RAG pipelines, agentic workflows — used by millions. Currently leading AI at FTech Solutions while delivering full-stack solutions for global clients.</p>
-        <div class="hero-cta-row">
-          <a href="#projects" class="btn-primary-dark"><span>View My Work</span><i class="fas fa-arrow-right"></i></a>
-          <a href="NabeelSohail-CV.pdf" class="btn-ghost-dark" download><i class="fas fa-download"></i> Download CV</a>
-        </div>
-        <div class="hero-metrics">
-          <div class="metric"><span class="mv">3<em>+</em></span><span class="mk">Years Exp</span></div>
-          <div class="msep"></div>
-          <div class="metric"><span class="mv">15<em>+</em></span><span class="mk">Projects</span></div>
-          <div class="msep"></div>
-          <div class="metric"><span class="mv">7<em>+</em></span><span class="mk">Leadership Roles</span></div>
-        </div>
       </div>
       <div class="hero-right">
         <div class="hud-frame">
@@ -162,7 +155,7 @@
           <div class="hud-tag-top">// ENGINEER.PROFILE</div>
           <div class="hud-tag-bot">STATUS: ACTIVE</div>
           <div class="hud-img">
-            <img src="./profile.jpg" alt="Developer workspace" loading="eager"/>
+            <img src="./profile.jpg" alt="Portrait of Nabeel Sohail in a dark blazer and white shirt" loading="eager"/>
             <div class="hud-scanbar"></div>
           </div>
           <div class="hud-pills">
@@ -179,92 +172,266 @@
     </div>
   </section>
 
-  <!-- WHAT I DO -->
-  <section class="services" id="services">
+
+  <!-- PROJECTS -->
+  <section class="projects" id="projects">
     <div class="container">
       <div class="sec-head reveal">
         <div class="sh-meta"><span class="sh-idx">01</span><span class="sh-rule"></span></div>
-        <h2>What I <span class="accent">Do</span></h2>
-        <p>I specialize in building intelligent systems, scalable platforms, and leading the engineers who ship them.</p>
+        <h2>Featured <span class="accent">Projects</span></h2>
+        <p>Three builds in detail, then the rest of the portfolio.</p>
       </div>
-      <div class="svc-grid">
-        <div class="svc-card reveal rd-1">
-          <div class="svc-glow"></div>
-          <div class="svc-icon-wrap"><i class="fas fa-brain"></i></div>
-          <div class="svc-num">01</div>
-          <h3>AI & GenAI Systems</h3>
-          <p>Architecting and shipping production-grade AI — LLM integrations, RAG pipelines, agentic workflows, NLP systems, computer vision, and voice AI serving millions of users.</p>
-          <div class="svc-foot"><i class="fas fa-arrow-up-right-from-square"></i></div>
-          <div class="cborder"></div>
-        </div>
-        <div class="svc-card reveal rd-2">
-          <div class="svc-glow"></div>
-          <div class="svc-icon-wrap"><i class="fas fa-server"></i></div>
-          <div class="svc-num">02</div>
-          <h3>Backend Engineering</h3>
-          <p>Designing robust backend systems, scalable REST APIs, and cloud-ready architectures using Python, Django, FastAPI, and AWS — built for performance and reliability at scale.</p>
-          <div class="svc-foot"><i class="fas fa-arrow-up-right-from-square"></i></div>
-          <div class="cborder"></div>
-        </div>
-        <div class="svc-card reveal rd-3">
-          <div class="svc-glow"></div>
-          <div class="svc-icon-wrap"><i class="fas fa-laptop-code"></i></div>
-          <div class="svc-num">03</div>
-          <h3>Full Stack Development</h3>
-          <p>Building complete web applications end-to-end — MERN stack, Django/FastAPI backends, responsive frontends, cloud deployment, and CI/CD pipelines ready for production.</p>
-          <div class="svc-foot"><i class="fas fa-arrow-up-right-from-square"></i></div>
-          <div class="cborder"></div>
-        </div>
-        <div class="svc-card reveal rd-4">
-          <div class="svc-glow"></div>
-          <div class="svc-icon-wrap"><i class="fas fa-users"></i></div>
-          <div class="svc-num">04</div>
-          <h3>Technical Leadership</h3>
-          <p>Leading AI engineering teams, setting technical direction, and mentoring engineers — combined with years of community leadership across IEEE, ACM, GDG, and national tech events.</p>
-          <div class="svc-foot"><i class="fas fa-arrow-up-right-from-square"></i></div>
-          <div class="cborder"></div>
-        </div>
+      <div class="cases">
+        <article class="case reveal">
+          <header class="case-head">
+            <div><span class="case-cat">AI / Computer Vision</span><h3>AEGiSS</h3></div>
+            <a class="case-link" href="https://github.com/NabeelSohail-30/FYP" target="_blank" rel="noopener noreferrer">GitHub <i class="fab fa-github"></i></a>
+          </header>
+          <div class="case-body">
+            <div class="case-text">
+              <h4>The problem</h4>
+              <p>Spotting crowds, fire and weapons on camera feeds normally needs a person watching every stream.</p>
+              <h4>What I built</h4>
+              <p>A surveillance platform that runs three YOLO models (crowd, fire, firearms) on uploaded video and live webcam feeds, and pushes alerts to a real-time dashboard. Detections are stored in SQLite and Firebase for auditability.</p>
+              <ul class="case-tags"><li>Django</li><li>YOLOv12</li><li>OpenCV</li><li>Firebase</li><li>Django Channels</li></ul>
+            </div>
+            <ol class="mini-pipe" aria-label="AEGiSS pipeline">
+              <li class="node"><span class="node-k">INPUT</span><span class="node-t">Uploaded video or live webcam (MJPEG via OpenCV)</span></li>
+              <li class="node node--core"><span class="node-k">DETECT</span><span class="node-t">3 YOLO models; 75% confidence on uploads, 85% on live</span></li>
+              <li class="node"><span class="node-k">STREAM</span><span class="node-t">Django Channels (ASGI) + Firebase Realtime Database</span></li>
+              <li class="node"><span class="node-k">ALERT</span><span class="node-t">Dashboard with toasts, filter by label and source</span></li>
+            </ol>
+          </div>
+        </article>
+
+        <article class="case reveal">
+          <header class="case-head">
+            <div><span class="case-cat">AI / Platform</span><h3>EventBridge AI</h3></div>
+            <a class="case-link" href="https://github.com/LaibaRafique/eventbridge-ai-web" target="_blank" rel="noopener noreferrer">GitHub <i class="fab fa-github"></i></a>
+          </header>
+          <div class="case-body">
+            <div class="case-text">
+              <h4>The problem</h4>
+              <p>Community-led events across a city are scattered, so communities struggle to run them and people struggle to find the right ones.</p>
+              <h4>What I built</h4>
+              <p>One platform where communities such as IEEE, GDSC and ACM manage the full event lifecycle, and users get an AI-powered feed: semantic search on vector embeddings, personalized recommendations, and real-time notifications, with an admin panel for moderation.</p>
+              <ul class="case-tags"><li>Laravel</li><li>Python / Django</li><li>LangChain</li><li>OpenAI Embeddings</li><li>Qdrant</li></ul>
+            </div>
+            <ol class="mini-pipe" aria-label="EventBridge AI pipeline">
+              <li class="node"><span class="node-k">EVENTS</span><span class="node-t">Community-created events (Laravel + MySQL)</span></li>
+              <li class="node"><span class="node-k">EMBED</span><span class="node-t">OpenAI embeddings from the Django AI engine</span></li>
+              <li class="node node--store"><span class="node-k">VECTOR STORE</span><span class="node-t">Qdrant semantic search</span></li>
+              <li class="node"><span class="node-k">FEED</span><span class="node-t">Personalized recommendations and notifications</span></li>
+            </ol>
+          </div>
+        </article>
+
+        <article class="case reveal">
+          <header class="case-head">
+            <div><span class="case-cat">HealthTech / EdTech</span><h3>Speech Pro</h3></div>
+            <a class="case-link" href="https://github.com/NabeelSohail-30/speech-pro" target="_blank" rel="noopener noreferrer">GitHub <i class="fab fa-github"></i></a>
+          </header>
+          <div class="case-body">
+            <div class="case-text">
+              <h4>The problem</h4>
+              <p>Speech therapy practice needs structure and instant feedback between sessions.</p>
+              <h4>What I built</h4>
+              <p>A therapy platform where patients work through sequential exercises: they record themselves in the browser against an expected text and get instant feedback. Each finished exercise unlocks the next, with separate login guards for patients and admins.</p>
+              <ul class="case-tags"><li>Laravel 12</li><li>Google Cloud TTS</li><li>ElevenLabs</li><li>MediaRecorder API</li><li>Alpine.js</li></ul>
+            </div>
+            <ol class="mini-pipe" aria-label="Speech Pro pipeline">
+              <li class="node"><span class="node-k">PROMPT</span><span class="node-t">Audio generated with Google Cloud TTS and ElevenLabs</span></li>
+              <li class="node"><span class="node-k">RECORD</span><span class="node-t">In-browser capture, no plugins (MediaRecorder)</span></li>
+              <li class="node node--core"><span class="node-k">SCORE</span><span class="node-t">Similarity to expected text, 85% pass threshold</span></li>
+              <li class="node"><span class="node-k">PROGRESS</span><span class="node-t">Next exercise unlocks; full therapy marked complete</span></li>
+            </ol>
+          </div>
+        </article>
       </div>
-      <div class="sec-cta reveal"><a href="#about" class="btn-ghost-dark">Learn More About Me <i class="fas fa-arrow-right"></i></a></div>
+
+      <h3 class="more-head">More builds</h3>
+      <div class="proj-grid">
+
+        <!-- 02 · NeoHouse -->
+        <div class="proj-card reveal rd-2">
+          <div class="proj-vis pvis-2">
+            <div class="pv-gridlines"></div>
+            <div class="pv-num">02</div>
+            <div class="pv-icon"><i class="fas fa-home"></i></div>
+            <div class="proj-hover"><a href="https://github.com/NabeelSohail-30/prop_mgmt" class="btn-proj" target="_blank" rel="noopener noreferrer">GitHub <i class="fab fa-github"></i></a></div>
+          </div>
+          <div class="proj-info">
+            <div class="pi-meta"><span class="pi-cat">Full Stack / Enterprise</span></div>
+            <h3>NeoHouse</h3>
+            <p>Internal real estate property management — built for clarity, control, and scale.</p>
+            <div class="pi-tags"><span>Laravel</span><span>SQLite</span><span>Tailwind CSS</span><span>Alpine.js</span></div>
+          </div>
+          <div class="cborder"></div>
+        </div>
+
+        <!-- 03 · VioTrack NYC -->
+        <div class="proj-card reveal rd-3">
+          <div class="proj-vis pvis-5">
+            <div class="pv-gridlines"></div>
+            <div class="pv-num">03</div>
+            <div class="pv-icon"><i class="fas fa-file-alt"></i></div>
+            <div class="proj-hover"><a href="https://github.com/NabeelSohail-30/AM-Violation" class="btn-proj" target="_blank" rel="noopener noreferrer">GitHub <i class="fab fa-github"></i></a></div>
+          </div>
+          <div class="proj-info">
+            <div class="pi-meta"><span class="pi-cat">Gov Tech / Automation</span></div>
+            <h3>VioTrack NYC</h3>
+            <p>Automated NYC building violation management — fetch, normalize, generate, and mail at scale.</p>
+            <div class="pi-tags"><span>Laravel</span><span>MySQL</span><span>Vue.js</span><span>DOMPDF</span><span>Click2Mail</span></div>
+          </div>
+          <div class="cborder"></div>
+        </div>
+
+        <!-- 04 · Disano -->
+        <div class="proj-card reveal rd-4">
+          <div class="proj-vis pvis-3">
+            <div class="pv-gridlines"></div>
+            <div class="pv-num">04</div>
+            <div class="pv-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="proj-hover"><a href="https://github.com/NabeelSohail-30/Disano" class="btn-proj" target="_blank" rel="noopener noreferrer">GitHub <i class="fab fa-github"></i></a></div>
+          </div>
+          <div class="proj-info">
+            <div class="pi-meta"><span class="pi-cat">Backend / RBAC</span></div>
+            <h3>Disano</h3>
+            <p>Lightweight RBAC administration panel — manage users, roles, and permissions with confidence.</p>
+            <div class="pi-tags"><span>Laravel</span><span>MySQL</span><span>Tailwind CSS</span><span>Alpine.js</span></div>
+          </div>
+          <div class="cborder"></div>
+        </div>
+
+        <!-- 05 · Pyranex -->
+        <div class="proj-card reveal rd-5">
+          <div class="proj-vis pvis-4">
+            <div class="pv-gridlines"></div>
+            <div class="pv-num">05</div>
+            <div class="pv-icon"><i class="fas fa-layer-group"></i></div>
+            <div class="proj-hover"><a href="https://github.com/NabeelSohail-30/Pyranex" class="btn-proj" target="_blank" rel="noopener noreferrer">GitHub <i class="fab fa-github"></i></a></div>
+          </div>
+          <div class="proj-info">
+            <div class="pi-meta"><span class="pi-cat">EdTech / Assessment</span></div>
+            <h3>Pyranex</h3>
+            <p>Pyramid-driven growth assessments — discover your WHY, HOW, and WHAT.</p>
+            <div class="pi-tags"><span>Laravel</span><span>SQLite</span><span>Tailwind CSS</span><span>DomPDF</span></div>
+          </div>
+          <div class="cborder"></div>
+        </div>
+
+        <!-- 06 · SeatSwap -->
+        <div class="proj-card reveal rd-6">
+          <div class="proj-vis pvis-2">
+            <div class="pv-gridlines"></div>
+            <div class="pv-num">06</div>
+            <div class="pv-icon"><i class="fas fa-plane"></i></div>
+            <div class="proj-hover"><a href="https://github.com/NabeelSohail-30/SeatSwap" class="btn-proj" target="_blank" rel="noopener noreferrer">GitHub <i class="fab fa-github"></i></a></div>
+          </div>
+          <div class="proj-info">
+            <div class="pi-meta"><span class="pi-cat">Travel Tech / P2P</span></div>
+            <h3>SeatSwap</h3>
+            <p>Airline seat swapping made social — trade seats with fellow passengers on the same flight.</p>
+            <div class="pi-tags"><span>Laravel</span><span>SQLite</span><span>Tailwind CSS</span><span>SendGrid</span></div>
+          </div>
+          <div class="cborder"></div>
+        </div>
+
+        <!-- 07 · SnipeItNow -->
+        <div class="proj-card reveal rd-1">
+          <div class="proj-vis pvis-6">
+            <div class="pv-gridlines"></div>
+            <div class="pv-num">07</div>
+            <div class="pv-icon"><i class="fas fa-crosshairs"></i></div>
+            <div class="proj-hover"><a href="https://github.com/NabeelSohail-30/Snipeitnow" class="btn-proj" target="_blank" rel="noopener noreferrer">GitHub <i class="fab fa-github"></i></a></div>
+          </div>
+          <div class="proj-info">
+            <div class="pi-meta"><span class="pi-cat">PropTech / SaaS</span></div>
+            <h3>SnipeItNow</h3>
+            <p>AI-powered Dubai property discovery — find undervalued real estate before anyone else does.</p>
+            <div class="pi-tags"><span>Laravel</span><span>MySQL</span><span>OpenAI</span><span>Stripe</span><span>Bayut API</span></div>
+          </div>
+          <div class="cborder"></div>
+        </div>
+
+        <!-- 11 · Explore Dominica -->
+        <div class="proj-card reveal rd-5">
+          <div class="proj-vis pvis-5">
+            <div class="pv-gridlines"></div>
+            <div class="pv-num">11</div>
+            <div class="pv-icon"><i class="fas fa-map-marked-alt"></i></div>
+          </div>
+          <div class="proj-info">
+            <div class="pi-meta"><span class="pi-cat">Travel & Tourism / CMS</span></div>
+            <h3>Explore Dominica</h3>
+            <p>Tourism content dashboard for the Caribbean's nature island — hikes, listings, GPS trails, and push notifications.</p>
+            <div class="pi-tags"><span>Laravel 11</span><span>Tailwind CSS</span><span>Blade</span><span>MySQL</span><span>Vite</span></div>
+          </div>
+          <div class="cborder"></div>
+        </div>
+
+        <!-- 10 · ZetPayOffers -->
+        <div class="proj-card reveal rd-4">
+          <div class="proj-vis pvis-6">
+            <div class="pv-gridlines"></div>
+            <div class="pv-num">10</div>
+            <div class="pv-icon"><i class="fas fa-coins"></i></div>
+            <div class="proj-hover"><a href="https://zetpayoffers.eu/" class="btn-proj" target="_blank" rel="noopener noreferrer">Live Site <i class="fas fa-external-link-alt"></i></a></div>
+          </div>
+          <div class="proj-info">
+            <div class="pi-meta"><span class="pi-cat">Static Web / FinTech</span></div>
+            <h3>ZetPayOffers</h3>
+            <p>Crypto and gaming offers aggregator — zero dependencies, dark violet UI, deployed live on cPanel.</p>
+            <div class="pi-tags"><span>HTML5</span><span>CSS3</span><span>Vanilla JS</span></div>
+          </div>
+          <div class="cborder"></div>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
+
+  <!-- HOW I BUILD -->
+  <section class="arch" id="architecture" aria-labelledby="arch-title">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-img-col reveal">
-          <div class="about-frame">
-            <div class="af-corner af-tl"></div>
-            <div class="af-corner af-br"></div>
-            <img src="./profile.jpg" alt="Developer at work" loading="lazy"/>
-            <div class="af-info">
-              <span class="afi-label">Based in</span>
-              <span class="afi-val">Karachi, PK</span>
-            </div>
-            <div class="af-badge"><span class="afb-num">3+</span><span class="afb-txt">Years<br/>Engineering</span></div>
-          </div>
+      <div class="sec-head reveal">
+        <div class="sh-meta"><span class="sh-idx">02</span><span class="sh-rule"></span></div>
+        <h2 id="arch-title">How I <span class="accent">Build</span></h2>
+        <p>A reference architecture for a production RAG and agent system: the stages I design, instrument, and ship.</p>
+      </div>
+
+      <div class="pipe-wrap">
+        <div class="pipe-lane reveal">
+          <div class="pipe-label"><span>LANE A</span>Ingest &amp; index <em>offline / scheduled</em></div>
+          <ol class="pipe" aria-label="Ingest lane">
+            <li class="node"><span class="node-k">SOURCES</span><span class="node-t">Docs, databases, APIs</span></li>
+            <li class="node"><span class="node-k">CHUNK</span><span class="node-t">Splitting strategy per content type</span></li>
+            <li class="node"><span class="node-k">EMBED</span><span class="node-t">Embedding models, batching</span></li>
+            <li class="node node--store"><span class="node-k">VECTOR STORE</span><span class="node-t">Qdrant · Pinecone · FAISS</span></li>
+          </ol>
         </div>
-        <div class="about-text-col reveal rd-2">
-          <div class="sec-head sec-head--left">
-            <div class="sh-meta"><span class="sh-idx">02</span><span class="sh-rule"></span></div>
-            <h2>About <span class="accent">Me</span></h2>
-          </div>
-          <p class="about-lead">I build AI that scales to millions.</p>
-          <p class="about-body">I'm a Senior AI & Full-Stack Engineer and AI Team Lead at FTech Solutions — the enterprise tech arm of Dawat-e-Islami — where I architect and ship production AI systems used by millions globally. Born in the UK, raised in Kuwait, and based in Karachi, I bring a multicultural lens to every system I build.</p>
-          <p class="about-body">Beyond production AI, I run a freelance consultancy, previously lectured Computer Science, and have spent years building technical communities at SSUET through IEEE, ACM, and GDG.</p>
-          <blockquote class="about-pullquote">"Because great technology is also about the people you bring along."</blockquote>
-          <div class="skill-chips">
-            <span><i class="fas fa-check"></i> GenAI & LLMs</span>
-            <span><i class="fas fa-check"></i> Backend Architecture</span>
-            <span><i class="fas fa-check"></i> Full-Stack Engineering</span>
-            <span><i class="fas fa-check"></i> Team Leadership</span>
-          </div>
-          <a href="#experience" class="btn-primary-dark">See My Experience <i class="fas fa-arrow-right"></i></a>
+
+        <div class="pipe-lane reveal">
+          <div class="pipe-label"><span>LANE B</span>Query &amp; answer <em>online / low latency</em></div>
+          <ol class="pipe" aria-label="Query lane">
+            <li class="node"><span class="node-k">REQUEST</span><span class="node-t">User or agent, via FastAPI</span></li>
+            <li class="node"><span class="node-k">RETRIEVE</span><span class="node-t">Hybrid search + reranking</span></li>
+            <li class="node node--core"><span class="node-k">LLM</span><span class="node-t">OpenAI · Claude · open-source, with tool use</span></li>
+            <li class="node"><span class="node-k">GUARD &amp; EVAL</span><span class="node-t">Validation, evals, fallbacks</span></li>
+          </ol>
+        </div>
+
+        <div class="pipe-lane pipe-lane--platform reveal">
+          <div class="pipe-label"><span>PLATFORM</span>Runs under both lanes</div>
+          <ul class="platform" aria-label="Platform layer">
+            <li>Docker</li><li>CI/CD</li><li>AWS</li><li>PostgreSQL / MongoDB</li><li>Monitoring &amp; logs</li><li>Security &amp; access control</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
+
 
   <!-- EXPERIENCE -->
   <section class="experience" id="experience">
@@ -399,13 +566,14 @@
     </div>
   </section>
 
+
   <!-- LEADERSHIP -->
   <section class="leadership" id="leadership">
     <div class="container">
       <div class="sec-head reveal">
         <div class="sh-meta"><span class="sh-idx">04</span><span class="sh-rule"></span></div>
         <h2>Leadership & <span class="accent">Community</span></h2>
-        <p>7 roles. 500+ engineers reached. One mission.</p>
+        <p>7 roles across 6 communities. One mission: build people, not just systems.</p>
       </div>
       <div class="lead-grid">
         <div class="lead-card reveal rd-1">
@@ -454,212 +622,138 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section class="projects" id="projects">
+
+  <!-- WHAT I DO -->
+  <section class="services" id="services">
     <div class="container">
       <div class="sec-head reveal">
         <div class="sh-meta"><span class="sh-idx">05</span><span class="sh-rule"></span></div>
-        <h2>Featured <span class="accent">Projects</span></h2>
-        <p>Selected builds from my engineering portfolio.</p>
+        <h2>What I <span class="accent">Do</span></h2>
+        <p>I specialize in building intelligent systems, scalable platforms, and leading the engineers who ship them.</p>
       </div>
-      <div class="proj-grid">
-
-        <!-- 01 · EventBridge AI -->
-        <div class="proj-card reveal rd-1">
-          <div class="proj-vis pvis-1">
-            <div class="pv-gridlines"></div>
-            <div class="pv-num">01</div>
-            <div class="pv-icon"><i class="fas fa-calendar-alt"></i></div>
-            <div class="proj-hover"><a href="https://github.com/LaibaRafique/eventbridge-ai-web" class="btn-proj" target="_blank" rel="noopener noreferrer">GitHub <i class="fab fa-github"></i></a></div>
-          </div>
-          <div class="proj-info">
-            <div class="pi-meta"><span class="pi-cat">AI / Platform</span></div>
-            <h3>EventBridge AI</h3>
-            <p>Bridging communities and users through intelligent event discovery.</p>
-            <div class="pi-tags"><span>Laravel</span><span>Python</span><span>LangChain</span><span>Qdrant</span><span>OpenAI</span></div>
-          </div>
+      <div class="svc-grid">
+        <div class="svc-card reveal rd-1">
+          <div class="svc-glow"></div>
+          <div class="svc-icon-wrap"><i class="fas fa-brain"></i></div>
+          <div class="svc-num">01</div>
+          <h3>AI & GenAI Systems</h3>
+          <p>Architecting and shipping production-grade AI — LLM integrations, RAG pipelines, agentic workflows, NLP systems, computer vision, and voice AI serving millions of users.</p>
+          <div class="svc-foot"><i class="fas fa-arrow-up-right-from-square"></i></div>
           <div class="cborder"></div>
         </div>
-
-        <!-- 02 · NeoHouse -->
-        <div class="proj-card reveal rd-2">
-          <div class="proj-vis pvis-2">
-            <div class="pv-gridlines"></div>
-            <div class="pv-num">02</div>
-            <div class="pv-icon"><i class="fas fa-home"></i></div>
-            <div class="proj-hover"><a href="https://github.com/NabeelSohail-30/prop_mgmt" class="btn-proj" target="_blank" rel="noopener noreferrer">GitHub <i class="fab fa-github"></i></a></div>
-          </div>
-          <div class="proj-info">
-            <div class="pi-meta"><span class="pi-cat">Full Stack / Enterprise</span></div>
-            <h3>NeoHouse</h3>
-            <p>Internal real estate property management — built for clarity, control, and scale.</p>
-            <div class="pi-tags"><span>Laravel</span><span>SQLite</span><span>Tailwind CSS</span><span>Alpine.js</span></div>
-          </div>
+        <div class="svc-card reveal rd-2">
+          <div class="svc-glow"></div>
+          <div class="svc-icon-wrap"><i class="fas fa-server"></i></div>
+          <div class="svc-num">02</div>
+          <h3>Backend Engineering</h3>
+          <p>Designing robust backend systems, scalable REST APIs, and cloud-ready architectures using Python, Django, FastAPI, and AWS — built for performance and reliability at scale.</p>
+          <div class="svc-foot"><i class="fas fa-arrow-up-right-from-square"></i></div>
           <div class="cborder"></div>
         </div>
-
-        <!-- 03 · VioTrack NYC -->
-        <div class="proj-card reveal rd-3">
-          <div class="proj-vis pvis-5">
-            <div class="pv-gridlines"></div>
-            <div class="pv-num">03</div>
-            <div class="pv-icon"><i class="fas fa-file-alt"></i></div>
-            <div class="proj-hover"><a href="https://github.com/NabeelSohail-30/AM-Violation" class="btn-proj" target="_blank" rel="noopener noreferrer">GitHub <i class="fab fa-github"></i></a></div>
-          </div>
-          <div class="proj-info">
-            <div class="pi-meta"><span class="pi-cat">Gov Tech / Automation</span></div>
-            <h3>VioTrack NYC</h3>
-            <p>Automated NYC building violation management — fetch, normalize, generate, and mail at scale.</p>
-            <div class="pi-tags"><span>Laravel</span><span>MySQL</span><span>Vue.js</span><span>DOMPDF</span><span>Click2Mail</span></div>
-          </div>
+        <div class="svc-card reveal rd-3">
+          <div class="svc-glow"></div>
+          <div class="svc-icon-wrap"><i class="fas fa-laptop-code"></i></div>
+          <div class="svc-num">03</div>
+          <h3>Full Stack Development</h3>
+          <p>Building complete web applications end-to-end — MERN stack, Django/FastAPI backends, responsive frontends, cloud deployment, and CI/CD pipelines ready for production.</p>
+          <div class="svc-foot"><i class="fas fa-arrow-up-right-from-square"></i></div>
           <div class="cborder"></div>
         </div>
-
-        <!-- 04 · Disano -->
-        <div class="proj-card reveal rd-4">
-          <div class="proj-vis pvis-3">
-            <div class="pv-gridlines"></div>
-            <div class="pv-num">04</div>
-            <div class="pv-icon"><i class="fas fa-shield-alt"></i></div>
-            <div class="proj-hover"><a href="https://github.com/NabeelSohail-30/Disano" class="btn-proj" target="_blank" rel="noopener noreferrer">GitHub <i class="fab fa-github"></i></a></div>
-          </div>
-          <div class="proj-info">
-            <div class="pi-meta"><span class="pi-cat">Backend / RBAC</span></div>
-            <h3>Disano</h3>
-            <p>Lightweight RBAC administration panel — manage users, roles, and permissions with confidence.</p>
-            <div class="pi-tags"><span>Laravel</span><span>MySQL</span><span>Tailwind CSS</span><span>Alpine.js</span></div>
-          </div>
+        <div class="svc-card reveal rd-4">
+          <div class="svc-glow"></div>
+          <div class="svc-icon-wrap"><i class="fas fa-users"></i></div>
+          <div class="svc-num">04</div>
+          <h3>Technical Leadership</h3>
+          <p>Leading AI engineering teams, setting technical direction, and mentoring engineers — combined with years of community leadership across IEEE, ACM, GDG, and national tech events.</p>
+          <div class="svc-foot"><i class="fas fa-arrow-up-right-from-square"></i></div>
           <div class="cborder"></div>
         </div>
-
-        <!-- 05 · Pyranex -->
-        <div class="proj-card reveal rd-5">
-          <div class="proj-vis pvis-4">
-            <div class="pv-gridlines"></div>
-            <div class="pv-num">05</div>
-            <div class="pv-icon"><i class="fas fa-layer-group"></i></div>
-            <div class="proj-hover"><a href="https://github.com/NabeelSohail-30/Pyranex" class="btn-proj" target="_blank" rel="noopener noreferrer">GitHub <i class="fab fa-github"></i></a></div>
-          </div>
-          <div class="proj-info">
-            <div class="pi-meta"><span class="pi-cat">EdTech / Assessment</span></div>
-            <h3>Pyranex</h3>
-            <p>Pyramid-driven growth assessments — discover your WHY, HOW, and WHAT.</p>
-            <div class="pi-tags"><span>Laravel</span><span>SQLite</span><span>Tailwind CSS</span><span>DomPDF</span></div>
-          </div>
-          <div class="cborder"></div>
-        </div>
-
-        <!-- 06 · SeatSwap -->
-        <div class="proj-card reveal rd-6">
-          <div class="proj-vis pvis-2">
-            <div class="pv-gridlines"></div>
-            <div class="pv-num">06</div>
-            <div class="pv-icon"><i class="fas fa-plane"></i></div>
-            <div class="proj-hover"><a href="https://github.com/NabeelSohail-30/SeatSwap" class="btn-proj" target="_blank" rel="noopener noreferrer">GitHub <i class="fab fa-github"></i></a></div>
-          </div>
-          <div class="proj-info">
-            <div class="pi-meta"><span class="pi-cat">Travel Tech / P2P</span></div>
-            <h3>SeatSwap</h3>
-            <p>Airline seat swapping made social — trade seats with fellow passengers on the same flight.</p>
-            <div class="pi-tags"><span>Laravel</span><span>SQLite</span><span>Tailwind CSS</span><span>SendGrid</span></div>
-          </div>
-          <div class="cborder"></div>
-        </div>
-
-        <!-- 07 · SnipeItNow -->
-        <div class="proj-card reveal rd-1">
-          <div class="proj-vis pvis-6">
-            <div class="pv-gridlines"></div>
-            <div class="pv-num">07</div>
-            <div class="pv-icon"><i class="fas fa-crosshairs"></i></div>
-            <div class="proj-hover"><a href="https://github.com/NabeelSohail-30/Snipeitnow" class="btn-proj" target="_blank" rel="noopener noreferrer">GitHub <i class="fab fa-github"></i></a></div>
-          </div>
-          <div class="proj-info">
-            <div class="pi-meta"><span class="pi-cat">PropTech / SaaS</span></div>
-            <h3>SnipeItNow</h3>
-            <p>AI-powered Dubai property discovery — find undervalued real estate before anyone else does.</p>
-            <div class="pi-tags"><span>Laravel</span><span>MySQL</span><span>OpenAI</span><span>Stripe</span><span>Bayut API</span></div>
-          </div>
-          <div class="cborder"></div>
-        </div>
-
-        <!-- 08 · Speech Pro -->
-        <div class="proj-card reveal rd-2">
-          <div class="proj-vis pvis-4">
-            <div class="pv-gridlines"></div>
-            <div class="pv-num">08</div>
-            <div class="pv-icon"><i class="fas fa-microphone"></i></div>
-            <div class="proj-hover"><a href="https://github.com/NabeelSohail-30/speech-pro" class="btn-proj" target="_blank" rel="noopener noreferrer">GitHub <i class="fab fa-github"></i></a></div>
-          </div>
-          <div class="proj-info">
-            <div class="pi-meta"><span class="pi-cat">HealthTech / EdTech</span></div>
-            <h3>Speech Pro</h3>
-            <p>Guided speech therapy in your browser — record, compare, and progress one exercise at a time.</p>
-            <div class="pi-tags"><span>Laravel</span><span>MySQL</span><span>Google Cloud TTS</span><span>ElevenLabs</span><span>Alpine.js</span></div>
-          </div>
-          <div class="cborder"></div>
-        </div>
-
-
-        <!-- 11 · Explore Dominica -->
-        <div class="proj-card reveal rd-5">
-          <div class="proj-vis pvis-5">
-            <div class="pv-gridlines"></div>
-            <div class="pv-num">11</div>
-            <div class="pv-icon"><i class="fas fa-map-marked-alt"></i></div>
-          </div>
-          <div class="proj-info">
-            <div class="pi-meta"><span class="pi-cat">Travel & Tourism / CMS</span></div>
-            <h3>Explore Dominica</h3>
-            <p>Tourism content dashboard for the Caribbean's nature island — hikes, listings, GPS trails, and push notifications.</p>
-            <div class="pi-tags"><span>Laravel 11</span><span>Tailwind CSS</span><span>Blade</span><span>MySQL</span><span>Vite</span></div>
-          </div>
-          <div class="cborder"></div>
-        </div>
-
-        <!-- 10 · ZetPayOffers -->
-        <div class="proj-card reveal rd-4">
-          <div class="proj-vis pvis-6">
-            <div class="pv-gridlines"></div>
-            <div class="pv-num">10</div>
-            <div class="pv-icon"><i class="fas fa-coins"></i></div>
-            <div class="proj-hover"><a href="https://zetpayoffers.eu/" class="btn-proj" target="_blank" rel="noopener noreferrer">Live Site <i class="fas fa-external-link-alt"></i></a></div>
-          </div>
-          <div class="proj-info">
-            <div class="pi-meta"><span class="pi-cat">Static Web / FinTech</span></div>
-            <h3>ZetPayOffers</h3>
-            <p>Crypto and gaming offers aggregator — zero dependencies, dark violet UI, deployed live on cPanel.</p>
-            <div class="pi-tags"><span>HTML5</span><span>CSS3</span><span>Vanilla JS</span></div>
-          </div>
-          <div class="cborder"></div>
-        </div>
-
-        <!-- 09 · AEGiSS -->
-        <div class="proj-card reveal rd-3">
-          <div class="proj-vis pvis-3">
-            <div class="pv-gridlines"></div>
-            <div class="pv-num">09</div>
-            <div class="pv-icon"><i class="fas fa-video"></i></div>
-            <div class="proj-hover"><a href="https://github.com/NabeelSohail-30/FYP" class="btn-proj" target="_blank" rel="noopener noreferrer">GitHub <i class="fab fa-github"></i></a></div>
-          </div>
-          <div class="proj-info">
-            <div class="pi-meta"><span class="pi-cat">AI / Computer Vision</span></div>
-            <h3>AEGiSS</h3>
-            <p>AI-powered surveillance that detects crowds, fire, and weapons — and alerts in real time via Firebase.</p>
-            <div class="pi-tags"><span>Django</span><span>YOLOv12</span><span>OpenCV</span><span>Firebase</span><span>Django Channels</span></div>
-          </div>
-          <div class="cborder"></div>
-        </div>
-
       </div>
     </div>
   </section>
+
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-col reveal">
+          <div class="about-frame">
+            <div class="af-corner af-tl"></div>
+            <div class="af-corner af-br"></div>
+            <img src="./profile.jpg" alt="Portrait of Nabeel Sohail in a dark blazer and white shirt" loading="lazy"/>
+            <div class="af-info">
+              <span class="afi-label">Based in</span>
+              <span class="afi-val">Middlesbrough, UK</span>
+            </div>
+            <div class="af-badge"><span class="afb-num">3+</span><span class="afb-txt">Years<br/>Engineering</span></div>
+          </div>
+        </div>
+        <div class="about-text-col reveal rd-2">
+          <div class="sec-head sec-head--left">
+            <div class="sh-meta"><span class="sh-idx">06</span><span class="sh-rule"></span></div>
+            <h2>About <span class="accent">Me</span></h2>
+          </div>
+          <p class="about-lead">I build AI that scales to millions.</p>
+          <p class="about-body">I'm a Senior AI & Full-Stack Engineer and AI Team Lead at FTech Solutions — the enterprise tech arm of Dawat-e-Islami — where I architect and ship production AI systems used by millions globally. Born in the UK, raised in Kuwait, trained in Karachi and now based in Middlesbrough, I bring a multicultural lens to every system I build.</p>
+          <p class="about-body">Beyond production AI, I run a freelance consultancy, previously lectured Computer Science, and have spent years building technical communities at SSUET through IEEE, ACM, and GDG.</p>
+          <blockquote class="about-pullquote">"Because great technology is also about the people you bring along."</blockquote>
+          <div class="skill-chips">
+            <span><i class="fas fa-check"></i> GenAI & LLMs</span>
+            <span><i class="fas fa-check"></i> Backend Architecture</span>
+            <span><i class="fas fa-check"></i> Full-Stack Engineering</span>
+            <span><i class="fas fa-check"></i> Team Leadership</span>
+          </div>
+          <a href="#experience" class="btn-primary-dark">See My Experience <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- WHY ME -->
+  <section class="why-me" id="why-me">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="sh-meta"><span class="sh-idx">07</span><span class="sh-rule"></span></div>
+        <h2>Why <span class="accent">Work With Me</span></h2>
+        <p>A rare engineering profile that combines production AI scale, full-stack breadth, and global mobility.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal rd-1">
+          <h3>Globally Mobile</h3>
+          <p>British national with the right to work in the UK. Open to relocation, remote, and hybrid roles worldwide.</p>
+        </div>
+        <div class="why-card reveal rd-2">
+          <h3>Proven at Scale</h3>
+          <p>Production AI systems serving millions of users globally — not hobby projects or POCs.</p>
+        </div>
+        <div class="why-card reveal rd-3">
+          <h3>Full-Stack + AI Hybrid</h3>
+          <p>End-to-end ownership from AI architecture to cloud deployment — research, dev, and ops in one profile.</p>
+        </div>
+        <div class="why-card reveal rd-1">
+          <h3>Team Leadership</h3>
+          <p>Not just an IC — I lead AI engineering teams, set technical direction, and ship at team velocity.</p>
+        </div>
+        <div class="why-card reveal rd-2">
+          <h3>Community Builder</h3>
+          <p>7 leadership roles across IEEE, ACM, GDG, SMEC, NASA Space Apps. I build people, not just systems.</p>
+        </div>
+        <div class="why-card reveal rd-3">
+          <h3>R&amp;D to Production</h3>
+          <p>From experimentation to stable, monitored, production-grade systems — I close the loop.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- TECH STACK -->
   <section class="techstack" id="stack">
     <div class="container">
       <div class="sec-head reveal">
-        <div class="sh-meta"><span class="sh-idx">06</span><span class="sh-rule"></span></div>
+        <div class="sh-meta"><span class="sh-idx">08</span><span class="sh-rule"></span></div>
         <h2>Technologies I <span class="accent">Work With</span></h2>
       </div>
       <div class="tech-grid reveal">
@@ -722,11 +816,12 @@
     </div>
   </section>
 
+
   <!-- EDUCATION & CERTIFICATIONS -->
   <section class="edu-certs" id="education">
     <div class="container">
       <div class="sec-head reveal">
-        <div class="sh-meta"><span class="sh-idx">07</span><span class="sh-rule"></span></div>
+        <div class="sh-meta"><span class="sh-idx">09</span><span class="sh-rule"></span></div>
         <h2>Education & <span class="accent">Certifications</span></h2>
         <p>Academic foundation and professional credentials that back the work.</p>
       </div>
@@ -736,7 +831,7 @@
           <div class="edu-item">
             <div class="edu-badge">BSCS</div>
             <div class="edu-body">
-              <h4>B.Sc. Computer Science</h4>
+              <h3>B.Sc. Computer Science</h3>
               <span class="edu-inst"><i class="fas fa-university"></i> Sir Syed University of Engineering &amp; Technology (SSUET)</span>
               <span class="edu-period">2021 — 2025 · Karachi, Pakistan</span>
               <p class="edu-note">CS fundamentals, software engineering, AI, and emerging tech. Led IEEE, ACM, and GDGoC simultaneously throughout the degree.</p>
@@ -746,7 +841,7 @@
           <div class="edu-item edu-item--sm">
             <div class="edu-badge edu-badge--sm">FSc</div>
             <div class="edu-body">
-              <h4>Intermediate in Computer Science</h4>
+              <h3>Intermediate in Computer Science</h3>
               <span class="edu-inst"><i class="fas fa-school"></i> Govt. National College, Karachi</span>
               <span class="edu-period">2019 — 2021</span>
             </div>
@@ -755,7 +850,7 @@
           <div class="edu-item edu-item--sm">
             <div class="edu-badge edu-badge--sm">ISP</div>
             <div class="edu-body">
-              <h4>International School of Pakistan Kuwait</h4>
+              <h3>International School of Pakistan Kuwait</h3>
               <span class="edu-inst"><i class="fas fa-globe"></i> Khaitan, Kuwait</span>
               <span class="edu-period">2004 — 2014</span>
             </div>
@@ -820,48 +915,6 @@
     </div>
   </section>
 
-  <!-- WHY ME -->
-  <section class="why-me" id="why-me">
-    <div class="container">
-      <div class="sec-head reveal">
-        <div class="sh-meta"><span class="sh-idx">08</span><span class="sh-rule"></span></div>
-        <h2>Why <span class="accent">Work With Me</span></h2>
-        <p>A rare engineering profile that combines production AI scale, full-stack breadth, and global mobility.</p>
-      </div>
-      <div class="why-grid">
-        <div class="why-card reveal rd-1">
-          <div class="why-icon"><i class="fas fa-globe"></i></div>
-          <h4>Globally Mobile</h4>
-          <p>British national — no visa sponsorship needed for UK/EU. Open to relocation, remote, and hybrid roles worldwide.</p>
-        </div>
-        <div class="why-card reveal rd-2">
-          <div class="why-icon"><i class="fas fa-chart-line"></i></div>
-          <h4>Proven at Scale</h4>
-          <p>Production AI systems serving millions of users globally — not hobby projects or POCs.</p>
-        </div>
-        <div class="why-card reveal rd-3">
-          <div class="why-icon"><i class="fas fa-layer-group"></i></div>
-          <h4>Full-Stack + AI Hybrid</h4>
-          <p>End-to-end ownership from AI architecture to cloud deployment — research, dev, and ops in one profile.</p>
-        </div>
-        <div class="why-card reveal rd-1">
-          <div class="why-icon"><i class="fas fa-users"></i></div>
-          <h4>Team Leadership</h4>
-          <p>Not just an IC — I lead AI engineering teams, set technical direction, and ship at team velocity.</p>
-        </div>
-        <div class="why-card reveal rd-2">
-          <div class="why-icon"><i class="fas fa-trophy"></i></div>
-          <h4>Community Builder</h4>
-          <p>7 leadership roles across IEEE, ACM, GDG, SMEC, NASA Space Apps. I build people, not just systems.</p>
-        </div>
-        <div class="why-card reveal rd-3">
-          <div class="why-icon"><i class="fas fa-microscope"></i></div>
-          <h4>R&amp;D to Production</h4>
-          <p>From cutting-edge experimentation to stable, monitored, production-grade systems — I close the loop.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- CONTACT -->
   <section class="cta-sec contact-sec" id="contact">
@@ -870,10 +923,36 @@
     <div class="cta-glow-r"></div>
     <div class="container">
       <div class="sec-head reveal">
-        <div class="sh-meta"><span class="sh-idx">09</span><span class="sh-rule"></span></div>
+        <div class="sh-meta"><span class="sh-idx">10</span><span class="sh-rule"></span></div>
         <h2>Let's <span class="accent">Connect</span></h2>
         <p>Whether it's an international role, a collaboration, a project, or just a genuine tech conversation.</p>
       </div>
+      <div class="paths reveal">
+        <article class="path">
+          <h3>Hiring</h3>
+          <p>Senior AI and full-stack roles, UK or worldwide. British national with the right to work in the UK; open to relocation, remote and hybrid.</p>
+          <div class="path-actions">
+            <a href="NabeelSohail-CV.pdf" class="btn-primary-dark" download><i class="fas fa-download"></i> Download CV</a>
+            <a href="https://www.linkedin.com/in/nabeel30/" class="path-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </article>
+        <article class="path">
+          <h3>Projects</h3>
+          <p>AI, full-stack and automation builds, scoped and delivered by a small team. Tell me what you are building.</p>
+          <div class="path-actions">
+            <a href="#contactForm" class="btn-primary-dark" data-subject="Freelance Project">Start a project</a>
+          </div>
+        </article>
+        <article class="path">
+          <h3>Community</h3>
+          <p>IEEE, ACM, GDG, SMEC and NASA Space Apps: mentoring, events and collaborations.</p>
+          <div class="path-actions">
+            <a href="#contactForm" class="btn-ghost-dark" data-subject="Collaboration">Say hello</a>
+            <a href="https://github.com/NabeelSohail-30" class="path-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </article>
+      </div>
+
       <blockquote class="cta-quote reveal">"I don't just build AI features. I build AI infrastructure that holds under real-world pressure, for real-world users, at real-world scale."</blockquote>
       <div class="contact-grid reveal">
         <div class="contact-info">
@@ -890,7 +969,7 @@
             <div class="ci-item">
               <div class="ci-icon"><i class="fas fa-phone"></i></div>
               <div class="ci-body">
-                <span class="ci-label">Phone / WhatsApp</span>
+                <span class="ci-label">WhatsApp (Pakistan number)</span>
                 <a href="tel:+923453628868" class="ci-val">+92-345-3628868</a>
               </div>
             </div>
@@ -898,7 +977,7 @@
               <div class="ci-icon"><i class="fas fa-location-dot"></i></div>
               <div class="ci-body">
                 <span class="ci-label">Location</span>
-                <span class="ci-val">Karachi, PK &nbsp;·&nbsp; 🇬🇧 British National</span>
+                <span class="ci-val">Middlesbrough, UK &nbsp;·&nbsp; British National</span>
               </div>
             </div>
           </div>
@@ -945,7 +1024,7 @@
               <span class="cf-btn-loading" style="display:none"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
             </button>
             <div class="cf-success" id="cfSuccess" style="display:none">
-              <i class="fas fa-check-circle"></i> Message composed! Your mail app will open to send.
+              <i class="fas fa-check-circle"></i> Opening your mail app. If nothing opens, email nabeel.dev.ai@gmail.com directly.
             </div>
           </form>
         </div>
@@ -953,42 +1032,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <a href="#hero" class="logo"><span class="logo-prefix">sys</span><span class="logo-slash">/</span><span class="logo-name">nabeel</span><span class="logo-cursor-blink">_</span></a>
-          <p>Senior AI Engineer · Team Lead<br/>Building AI that holds at scale.<br/><span style="font-size:11px;opacity:0.6;">🇬🇧 British National · Open to Relocation</span></p>
-        </div>
-        <div class="footer-nav">
-          <h4>Navigation</h4>
-          <a href="#hero">Home</a>
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#leadership">Leadership</a>
-          <a href="#stack">Tech Stack</a>
-          <a href="#education">Education</a>
-          <a href="#why-me">Why Me</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="footer-social">
-          <h4>Connect</h4>
-          <div class="social-icons">
-            <a href="https://github.com/NabeelSohail-30" class="si" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/nabeel30/" class="si" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.instagram.com/coder_nabeel30/" class="si" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-            <a href="mailto:nabeel.dev.ai@gmail.com" class="si" aria-label="Email"><i class="fas fa-envelope"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="fb-line"></div>
-        <span>© <span id="footerYear"></span> Mohammad Nabeel Sohail · Crafted with precision</span>
-      </div>
-    </div>
-  </footer>
 
   </main>
 

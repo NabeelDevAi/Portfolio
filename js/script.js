@@ -2,13 +2,22 @@
    NABEEL SOHAIL — DEEP SPACE TERMINAL JS
    ================================================ */
 
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 // ---- LOADER ----
+let skipped = false;
 (function initLoader() {
   const loader    = document.getElementById('loader');
   const linesEl   = document.getElementById('loaderLines');
   const barEl     = document.getElementById('loaderBar');
   const statusEl  = document.getElementById('loaderStatus');
   if (!loader) return;
+  const skipBtn = document.getElementById('loaderSkip');
+  let seen = false;
+  try { seen = sessionStorage.getItem('bootSeen') === '1'; sessionStorage.setItem('bootSeen', '1'); } catch (e) {}
+  const finish = () => loader.classList.add('hidden');
+  if (reduceMotion || seen) { finish(); return; }
+  if (skipBtn) skipBtn.addEventListener('click', () => { skipped = true; finish(); });
 
   const steps = [
     { text: '[ ok ]  system environment loaded',  bar: 25,  status: 'loading modules...' },
@@ -19,6 +28,7 @@
 
   let i = 0;
   function nextStep() {
+    if (skipped) return;
     if (i >= steps.length) {
       setTimeout(() => loader.classList.add('hidden'), 400);
       return;
@@ -109,15 +119,15 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
 // ---- REVEAL ON SCROLL ----
 const revealEls = document.querySelectorAll('.reveal');
-const revealObs = new IntersectionObserver(entries => {
+const revealObs = ('IntersectionObserver' in window && !reduceMotion) ? new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.10, rootMargin: '0px 0px -40px 0px' });
-revealEls.forEach(el => revealObs.observe(el));
+}, { threshold: 0.10, rootMargin: '0px 0px -40px 0px' }) : null;
+revealEls.forEach(el => revealObs ? revealObs.observe(el) : el.classList.add('visible'));
 
 // ---- PARTICLE CANVAS ----
 (function initParticles() {
   const canvas = document.getElementById('particleCanvas');
-  if (!canvas) return;
+  if (!canvas || reduceMotion || window.innerWidth < 768) return;
   const ctx = canvas.getContext('2d');
   let W, H, particles = [];
 
@@ -190,12 +200,13 @@ revealEls.forEach(el => revealObs.observe(el));
 
   const sequences = [
     {
-      cmd: 'nabeel --info',
+      cmd: 'nabeel --whoami',
       output: [
-        { label: 'name',    val: 'Mohammad Nabeel Sohail' },
-        { label: 'role',    val: 'Senior AI Engineer · Team Lead' },
+        { label: 'role',    val: 'AI Team Lead · Senior Engineer' },
         { label: 'company', val: 'FTech Solutions — Dawat-e-Islami' },
-        { label: 'status',  val: 'open to international opportunities' },
+        { label: 'based',   val: 'Middlesbrough, UK · British national' },
+        { label: 'status',  val: 'open to roles and projects worldwide' },
+        { label: 'scale',   val: 'platforms serving millions of users' },
       ]
     },
     {
@@ -223,10 +234,16 @@ revealEls.forEach(el => revealObs.observe(el));
     'Loading engineer data...',
     'Systems online.',
     'Ready to build.',
-    '🇬🇧 British National',
-    'Based in Karachi, PK',
+    'British National',
+    'Based in Middlesbrough, UK',
     'Open to Relocation & Remote',
   ];
+
+  if (reduceMotion) {
+    cmdEl.textContent = sequences[0].cmd;
+    outputEl.innerHTML = sequences[0].output.map(o => `<div><span class="to-line">${o.label}:</span> <span class="to-val">${o.val}</span></div>`).join('');
+    return;
+  }
 
   let seqIdx = 0, charIdx = 0, lineIdx = 0, phase = 'typing';
 
@@ -272,21 +289,6 @@ revealEls.forEach(el => revealObs.observe(el));
 
   setTimeout(typeChar, 800);
 
-  // Status text cycle
-  let sIdx = 0;
-  function cycleStatus() {
-    if (statusEl) {
-      statusEl.style.opacity = '0';
-      setTimeout(() => {
-        sIdx = (sIdx + 1) % statusMessages.length;
-        statusEl.textContent = statusMessages[sIdx];
-        statusEl.style.opacity = '1';
-        statusEl.style.transition = 'opacity 0.4s';
-      }, 300);
-    }
-    setTimeout(cycleStatus, 3000);
-  }
-  setTimeout(cycleStatus, 1200);
 })();
 
 // ---- ACTIVE NAV HIGHLIGHTING ----
@@ -401,3 +403,12 @@ if (backTop) {
     window.scrollTo({ top: 0 });
   });
 }
+
+// ---- CONTACT PATHS: preselect subject ----
+document.querySelectorAll('[data-subject]').forEach(a => {
+  a.addEventListener('click', () => {
+    const sel = document.getElementById('cf-subject');
+    if (sel) sel.value = a.dataset.subject;
+    setTimeout(() => { const n = document.getElementById('cf-name'); if (n) n.focus({ preventScroll: true }); }, 400);
+  });
+});

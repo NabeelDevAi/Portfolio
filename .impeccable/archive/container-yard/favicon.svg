@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" fill="#a63a2c"/>
+  <rect y="26" width="32" height="6" fill="#7e2a20"/>
+  <path d="M16 3v23M8 3v23M24 3v23" stroke="#7e2a20" stroke-width="2"/>
+  <rect x="0" y="0" width="4" height="4" fill="#1e2124"/><rect x="28" y="0" width="4" height="4" fill="#1e2124"/>
+  <text x="16" y="21" font-family="Impact, 'Arial Narrow', sans-serif" font-weight="900" font-size="17" text-anchor="middle" fill="#fff">N</text>
+</svg>

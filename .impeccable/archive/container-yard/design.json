@@ -1,0 +1,446 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-16T00:00:00Z",
+  "title": "Design System: Nabeel Sohail Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "container-red": {
+        "role": "primary",
+        "displayName": "Container Red",
+        "canonical": "#a63a2c",
+        "tonalRamp": [
+          "#3c1510",
+          "#65231b",
+          "#8d3125",
+          "#b53f30",
+          "#d26456",
+          "#df9086",
+          "#ecbdb6",
+          "#f9e9e7"
+        ]
+      },
+      "red-deep": {
+        "role": "primary",
+        "displayName": "Door Seam Red",
+        "canonical": "#7e2a20",
+        "tonalRamp": [
+          "#3d140f",
+          "#66221a",
+          "#8e2f24",
+          "#b73d2e",
+          "#d46254",
+          "#e08f85",
+          "#ecbcb6",
+          "#f9e9e7"
+        ]
+      },
+      "ocean-blue": {
+        "role": "secondary",
+        "displayName": "Ocean Blue",
+        "canonical": "#1b4a7a",
+        "tonalRamp": [
+          "#0e263f",
+          "#173f68",
+          "#205992",
+          "#2a72bc",
+          "#5093d8",
+          "#82b2e3",
+          "#b4d1ee",
+          "#e6f0f9"
+        ]
+      },
+      "blue-deep": {
+        "role": "secondary",
+        "displayName": "Deep Ocean",
+        "canonical": "#123456",
+        "tonalRamp": [
+          "#0d263f",
+          "#164069",
+          "#1f5994",
+          "#2873be",
+          "#4e94da",
+          "#80b2e5",
+          "#b3d1ef",
+          "#e6f0fa"
+        ]
+      },
+      "mustard": {
+        "role": "tertiary",
+        "displayName": "Hazard Mustard",
+        "canonical": "#d6a21e",
+        "tonalRamp": [
+          "#433309",
+          "#705510",
+          "#9d7716",
+          "#c9981c",
+          "#e5b743",
+          "#eccc79",
+          "#f4e0ae",
+          "#fbf5e4"
+        ]
+      },
+      "mustard-deep": {
+        "role": "tertiary",
+        "displayName": "Deep Mustard",
+        "canonical": "#a87d0e",
+        "tonalRamp": [
+          "#473506",
+          "#76580a",
+          "#a57b0e",
+          "#d49e12",
+          "#efbc39",
+          "#f3cf72",
+          "#f8e2aa",
+          "#fdf5e3"
+        ]
+      },
+      "forest-green": {
+        "role": "tertiary",
+        "displayName": "Forest Green",
+        "canonical": "#2a5f46",
+        "tonalRamp": [
+          "#173527",
+          "#275841",
+          "#377c5b",
+          "#469f75",
+          "#6abd96",
+          "#95d0b4",
+          "#bfe3d2",
+          "#eaf6f0"
+        ]
+      },
+      "green-deep": {
+        "role": "tertiary",
+        "displayName": "Deep Forest",
+        "canonical": "#1d4533",
+        "tonalRamp": [
+          "#173628",
+          "#265a42",
+          "#357e5d",
+          "#44a277",
+          "#68c098",
+          "#93d2b6",
+          "#bee4d3",
+          "#e9f6f0"
+        ]
+      },
+      "steel": {
+        "role": "neutral",
+        "displayName": "Bare Steel",
+        "canonical": "#a9b3b8",
+        "tonalRamp": [
+          "#23272a",
+          "#3a4246",
+          "#515c62",
+          "#68767e",
+          "#8a979e",
+          "#abb5ba",
+          "#cdd3d5",
+          "#eef0f1"
+        ]
+      },
+      "steel-deep": {
+        "role": "neutral",
+        "displayName": "Shadowed Steel",
+        "canonical": "#7f8b91",
+        "tonalRamp": [
+          "#232729",
+          "#3b4145",
+          "#525b60",
+          "#6a767b",
+          "#8c979c",
+          "#adb4b8",
+          "#ced2d5",
+          "#eff0f1"
+        ]
+      },
+      "concrete": {
+        "role": "neutral",
+        "displayName": "Yard Concrete",
+        "canonical": "#d3d5d1",
+        "tonalRamp": [
+          "#262825",
+          "#40433d",
+          "#595d55",
+          "#73786e",
+          "#94998f",
+          "#b2b6af",
+          "#d1d3cf",
+          "#f0f0ef"
+        ]
+      },
+      "asphalt": {
+        "role": "neutral",
+        "displayName": "Asphalt",
+        "canonical": "#1e2124",
+        "tonalRamp": [
+          "#23262a",
+          "#3a4046",
+          "#515961",
+          "#68737d",
+          "#8a949e",
+          "#acb2b9",
+          "#cdd1d5",
+          "#eef0f1"
+        ]
+      },
+      "asphalt-2": {
+        "role": "neutral",
+        "displayName": "Asphalt Raised",
+        "canonical": "#2b2f33",
+        "tonalRamp": [
+          "#23262a",
+          "#3a4045",
+          "#525961",
+          "#69737d",
+          "#8b949d",
+          "#acb2b9",
+          "#cdd1d5",
+          "#eef0f1"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Manifest Paper",
+        "canonical": "#f1f2f0",
+        "tonalRamp": [
+          "#262924",
+          "#40443b",
+          "#596053",
+          "#737b6b",
+          "#949c8c",
+          "#b2b8ad",
+          "#d1d4ce",
+          "#f0f1ef"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#16181a",
+        "tonalRamp": [
+          "#232629",
+          "#3a4045",
+          "#525961",
+          "#69737c",
+          "#8b949d",
+          "#acb2b9",
+          "#cdd1d5",
+          "#eef0f1"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink Soft",
+        "canonical": "#3b4147",
+        "tonalRamp": [
+          "#23262a",
+          "#3a4046",
+          "#515961",
+          "#68737d",
+          "#8a949e",
+          "#abb2ba",
+          "#cdd1d5",
+          "#eef0f1"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "Stencil White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#595959",
+          "#737373",
+          "#949494",
+          "#b2b2b2",
+          "#d1d1d1",
+          "#f0f0f0"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Stencil Display",
+        "purpose": "All h1-h3, door labels, container names, wordmark, stamps. Uppercase, 900."
+      },
+      "body": {
+        "displayName": "Archivo Body",
+        "purpose": "Running copy, buttons, nav items, form fields."
+      },
+      "code": {
+        "displayName": "Martian Mono Code",
+        "purpose": "ISO 6346 codes, B/L document numbers, dates, manifest labels. Data only."
+      }
+    },
+    "shadows": [
+      {
+        "name": "door-rest",
+        "value": "0 10px 20px rgba(0,0,0,0.3)",
+        "purpose": "Route door at rest."
+      },
+      {
+        "name": "box-rest",
+        "value": "0 10px 18px rgba(0,0,0,0.22)",
+        "purpose": "Container tile at rest."
+      },
+      {
+        "name": "box-hover",
+        "value": "0 20px 28px rgba(0,0,0,0.3)",
+        "purpose": "Container tile lifted on hover."
+      },
+      {
+        "name": "box-open",
+        "value": "0 0 0 4px var(--ink), 0 16px 24px rgba(0,0,0,0.3)",
+        "purpose": "Opened container: hard ink ring plus drop."
+      },
+      {
+        "name": "sheet",
+        "value": "0 18px 32px rgba(0,0,0,0.3)",
+        "purpose": "Paper ledger and contact sheet (0.4 alpha on dark ground)."
+      }
+    ],
+    "motion": [
+      {
+        "name": "expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Lifts, seam widening, door leaves (0.25s-0.9s). Disabled under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "lg",
+        "value": "1000px"
+      },
+      {
+        "name": "md",
+        "value": "860px"
+      },
+      {
+        "name": "sm",
+        "value": "620px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Container Tile",
+      "kind": "card",
+      "refersTo": "container-tile",
+      "description": "Project box: corrugated colour block with seam, locking rods, corner castings and an ISO code plate. Lifts on hover, ringed in ink when open.",
+      "html": "<button class=\"ds-box\" aria-expanded=\"false\"><span class=\"ds-box-code\">ACME 123456 7</span><span><span class=\"ds-box-name\">Aegiss</span><span class=\"ds-box-cat\">AI surveillance, YOLO</span></span></button>",
+      "css": ".ds-box{position:relative;display:flex;flex-direction:column;justify-content:space-between;width:240px;aspect-ratio:1/1.02;padding:22px 18px 20px;text-align:left;background-color:var(--red);background-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='8'%3E%3Crect x='0' width='1.5' height='8' fill='rgba%28255%2C255%2C255%2C0.20%29'/%3E%3Crect x='1.5' width='2' height='8' fill='rgba%28255%2C255%2C255%2C0.07%29'/%3E%3Crect x='5' width='3' height='8' fill='rgba%280%2C0%2C0%2C0.20%29'/%3E%3Crect x='8' width='1.5' height='8' fill='rgba%280%2C0%2C0%2C0.30%29'/%3E%3C/svg%3E\");color:var(--white);border:0;border-bottom:8px solid var(--red-deep);cursor:pointer;box-shadow:0 10px 18px rgba(0,0,0,.22);transition:transform .35s var(--expo),box-shadow .35s var(--expo);overflow:hidden}.ds-box::before{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent calc(50% - 1.5px),rgba(0,0,0,.4) calc(50% - 1.5px) calc(50% + 1.5px),transparent calc(50% + 1.5px))}.ds-box:hover{transform:translateY(-8px);box-shadow:0 20px 28px rgba(0,0,0,.3)}.ds-box:focus-visible{outline:3px solid var(--mustard);outline-offset:3px}.ds-box[aria-expanded=true]{transform:translateY(-4px);box-shadow:0 0 0 4px var(--ink),0 16px 24px rgba(0,0,0,.3)}.ds-box-code{position:relative;align-self:flex-end;padding:3px 7px;font-family:var(--font-code);font-size:.6875rem;background:rgba(0,0,0,.32)}.ds-box-name{position:relative;display:block;font-family:var(--font-display);font-weight:900;text-transform:uppercase;font-size:2rem;line-height:.95}.ds-box-cat{position:relative;display:block;margin-top:10px;padding-top:6px;border-top:3px solid rgba(255,255,255,.55);font-size:.8125rem;font-weight:600}"
+    },
+    {
+      "name": "Route Door",
+      "kind": "custom",
+      "refersTo": "route-door",
+      "description": "Hero route button: paper door with centre seam and locking rods; seam widens to an asphalt gap on hover.",
+      "html": "<a class=\"ds-door\" href=\"#\"><span class=\"ds-door-for\">For recruiters</span><span class=\"ds-door-label\">Hiring</span></a>",
+      "css": ".ds-door{position:relative;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;width:300px;min-height:132px;padding:18px 56px 18px 22px;background:var(--paper);color:var(--ink);text-decoration:none;box-shadow:0 10px 20px rgba(0,0,0,.3);transition:transform .35s var(--expo),box-shadow .35s var(--expo);overflow:hidden}.ds-door::before{content:'';position:absolute;top:0;bottom:0;left:50%;width:3px;margin-left:-1.5px;background:rgba(0,0,0,.28);transition:width .35s var(--expo),margin-left .35s var(--expo)}.ds-door:hover{transform:translateY(-6px);box-shadow:0 18px 28px rgba(0,0,0,.38)}.ds-door:hover::before{width:14px;margin-left:-7px;background:var(--asphalt)}.ds-door:focus-visible{outline:3px solid var(--mustard);outline-offset:3px}.ds-door-for{position:relative;font-size:.875rem;font-weight:600;color:var(--ink-2)}.ds-door-label{position:relative;font-family:var(--font-display);font-weight:900;text-transform:uppercase;font-size:2rem;line-height:1}"
+    },
+    {
+      "name": "Bill-of-Lading Manifest",
+      "kind": "custom",
+      "refersTo": "manifest",
+      "description": "Opened project panel: paper sheet on an ink frame, mono document code, stencil title, outlined tag chips.",
+      "html": "<div class=\"ds-open\"><div class=\"ds-manifest\"><div class=\"ds-manifest-top\"><span class=\"ds-doc\">B/L ACME-0042</span><button class=\"ds-close\">Close</button></div><h3>Aegiss</h3><p class=\"ds-cat\">Final-year project</p><ul class=\"ds-tags\"><li>YOLO</li><li>Firebase</li></ul></div></div>",
+      "css": ".ds-open{background:var(--ink);padding:14px;box-shadow:0 14px 28px rgba(0,0,0,.3)}.ds-manifest{background:var(--paper);color:var(--ink);padding:32px}.ds-manifest-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:14px;margin-bottom:18px;border-bottom:3px solid var(--ink)}.ds-doc{font-family:var(--font-code);font-size:.75rem;letter-spacing:.04em;text-transform:uppercase}.ds-close{padding:8px 16px;background:var(--ink);color:var(--white);font-weight:700;border:0;cursor:pointer;transition:background-color .2s}.ds-close:hover{background:var(--red)}.ds-close:focus-visible{outline:3px solid var(--mustard);outline-offset:3px}.ds-manifest h3{font-family:var(--font-display);font-weight:900;text-transform:uppercase;font-size:3rem;line-height:.95;margin-bottom:8px}.ds-cat{font-weight:700;color:var(--red-deep);margin-bottom:18px}.ds-tags{display:flex;gap:8px;list-style:none;padding:0}.ds-tags li{padding:5px 12px;border:2px solid var(--ink);font-weight:600;font-size:.875rem}"
+    },
+    {
+      "name": "Ledger Leg with Stamp",
+      "kind": "custom",
+      "refersTo": "ledger-leg",
+      "description": "Experience entry on the voyage ledger: mono date, rotated red stamp, stencil role, blue organisation, ink rule below.",
+      "html": "<div class=\"ds-ledger\"><div class=\"ds-leg\"><div><p class=\"ds-leg-date\">2023 - NOW</p><span class=\"ds-stamp\">Current</span></div><div><h3>AI Team Lead</h3><p class=\"ds-org\">FTech Solutions</p></div></div></div>",
+      "css": ".ds-ledger{background:var(--paper);color:var(--ink);padding:0 32px;box-shadow:0 18px 32px rgba(0,0,0,.3)}.ds-leg{display:grid;grid-template-columns:minmax(150px,.34fr) 1fr;gap:32px;padding:32px 0;border-bottom:3px solid var(--ink)}.ds-leg-date{font-family:var(--font-code);font-size:.8125rem;margin-bottom:10px}.ds-stamp{display:inline-block;padding:3px 10px;border:3px solid var(--red);color:var(--red-deep);font-family:var(--font-display);font-weight:900;text-transform:uppercase;font-size:1.05rem;letter-spacing:.06em;line-height:1.2;transform:rotate(-2deg)}.ds-leg h3{font-family:var(--font-display);font-weight:900;text-transform:uppercase;font-size:2.2rem;line-height:.95;margin-bottom:6px}.ds-org{font-weight:700;color:var(--blue)}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Fixed asphalt bar with red bottom rule, stencil wordmark plus mono code, mustard underline on active item, mustard CV button.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-word\" href=\"#\"><span class=\"ds-word-name\">Nabeel Sohail</span><span class=\"ds-word-code\">NSOH 204817 3</span></a><span class=\"ds-links\"><a class=\"ds-item active\" href=\"#\">Work</a><a class=\"ds-item\" href=\"#\">About</a><a class=\"ds-cv\" href=\"#\">CV</a></span></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;justify-content:space-between;height:60px;padding:0 32px;background:var(--asphalt);color:var(--white);border-bottom:3px solid var(--red)}.ds-word{display:flex;align-items:baseline;gap:14px;text-decoration:none;color:inherit}.ds-word-name{font-family:var(--font-display);font-weight:900;text-transform:uppercase;font-size:1.65rem;letter-spacing:.04em;line-height:1}.ds-word-code{font-family:var(--font-code);font-size:.6875rem;color:#b9c0c5}.ds-links{display:flex;align-items:center;gap:2px}.ds-item{padding:8px 12px;font-weight:600;font-size:.9375rem;text-decoration:none;color:#d8dde0;border-bottom:3px solid transparent;transition:color .2s}.ds-item:hover{color:var(--white)}.ds-item.active{color:var(--white);border-bottom-color:var(--mustard)}.ds-cv{margin-left:14px;padding:9px 16px;background:var(--mustard);color:var(--ink);font-weight:700;text-decoration:none;transition:background-color .2s,transform .2s var(--expo)}.ds-cv:hover{background:#e8b52e;transform:translateY(-2px)}.ds-item:focus-visible,.ds-cv:focus-visible{outline:3px solid var(--white);outline-offset:3px}"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Solid red, square-cornered, 3px border; lifts 3px on hover and darkens to door-seam red.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">View work</a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;font-family:var(--font-body);font-weight:700;font-size:1rem;letter-spacing:.02em;text-decoration:none;background:var(--red);color:var(--white);border:3px solid var(--red);cursor:pointer;transition:transform .25s var(--expo),background-color .2s}.ds-btn-primary:hover{background:var(--red-deep);border-color:var(--red-deep);transform:translateY(-3px)}.ds-btn-primary:active{transform:translateY(0)}.ds-btn-primary:focus-visible{outline:3px solid var(--mustard);outline-offset:3px}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Transparent with a 3px white outline for dark or coloured grounds; fills white on hover.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Download CV</a>",
+      "css": ".ds-btn-ghost{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;font-family:var(--font-body);font-weight:700;font-size:1rem;letter-spacing:.02em;text-decoration:none;background:transparent;color:var(--white);border:3px solid var(--white);cursor:pointer;transition:transform .25s var(--expo),background-color .2s,color .2s}.ds-btn-ghost:hover{background:var(--white);color:var(--ink);transform:translateY(-3px)}.ds-btn-ghost:focus-visible{outline:3px solid var(--mustard);outline-offset:3px}"
+    },
+    {
+      "name": "Form Field",
+      "kind": "input",
+      "refersTo": "form-field",
+      "description": "Contact-sheet field on paper: bold label, white input with 3px ink border and no radius; focus turns the border red with a mustard outline.",
+      "html": "<div class=\"ds-field\"><label for=\"ds-n\">Name</label><input id=\"ds-n\" type=\"text\" value=\"Ada\"></div>",
+      "css": ".ds-field{width:320px;margin-bottom:18px}.ds-field label{display:block;margin-bottom:6px;font-weight:700;font-size:.9375rem;color:var(--ink)}.ds-field input{width:100%;padding:12px 14px;font:inherit;color:var(--ink);background:var(--white);border:3px solid var(--ink);border-radius:0;caret-color:var(--red);transition:border-color .2s,background-color .2s}.ds-field input:focus{outline:3px solid var(--mustard);outline-offset:2px;border-color:var(--red)}.ds-field input[aria-invalid=true]{border-color:var(--red);background:#fbefec}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Container Yard",
+    "overview": "A portfolio laid out as a container bay plan. Every coloured surface is a corrugated steel box in oxide red, ocean blue, mustard, forest green or bare steel, set on yard concrete under asphalt chrome, and read at the scale of a port. Documents (the bill of lading, the ledger, the contact sheet) are cool off-white paper with hard ink rules.\n\nThe shipping container is the one standard object shared by every place in the story, so the system is global rather than national. Type is stencil display over a plain grotesque body, with monospace reserved for real ISO 6346 codes. Density is generous in sections and compact inside boxes; corners are square.\n\nMotion is mechanical: boxes lift, seams widen, door leaves swing open to reveal the manifest.",
+    "keyCharacteristics": [
+      "Flat-colour corrugated steel with SVG rib tile as the single material",
+      "Square corners everywhere; 3px ink or white borders",
+      "Real offset shadows, no glow",
+      "Stencil display, Archivo body, mono for codes only",
+      "Door seams, locking rods and corner castings as interactive vocabulary",
+      "Paper and ink for documents; asphalt for chrome"
+    ],
+    "rules": [
+      {
+        "name": "The Code-Only Mono Rule",
+        "body": "Martian Mono sets ISO codes, document numbers, dates and data labels only. Never headings, buttons, body copy or decoration.",
+        "section": "typography"
+      },
+      {
+        "name": "The One-Material Rule",
+        "body": "Everything coloured is corrugated steel: a flat colour plus the SVG rib tile. No gradients-as-surfaces, glass, or second material. Paper and ink are documents, asphalt is chrome, concrete is ground.",
+        "section": "colors"
+      },
+      {
+        "name": "The Rib Fade Rule",
+        "body": "Ribs fade to flat colour beneath body copy (a 300px gradient from transparent to the section colour over the plain tile) so reading text never sits on corrugation.",
+        "section": "colors"
+      },
+      {
+        "name": "The Real Weight Rule",
+        "body": "Depth is a real offset shadow cast straight down (0 10px 18px up to 0 20px 28px, black at 22-40%). No glow, no blur halos, no coloured shadows.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Door Hardware Rule",
+        "body": "Interactive objects speak in door vocabulary: seams, locking rods, corner castings, leaves that swing open. Hover lifts the object; it never glows.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do build coloured surfaces from one palette colour plus the rib tile and a deeper bottom edge (8px on boxes).",
+      "Do set every h1-h3 in Big Shoulders Stencil, 900, uppercase, line-height 0.95.",
+      "Do keep corners square and borders 3px.",
+      "Do use ink-on-mustard and ink-on-steel text; white on red, blue and green.",
+      "Do give each section a focus outline colour that contrasts its ground (mustard, white or ink).",
+      "Do generate ISO codes with a computed check digit."
+    ],
+    "donts": [
+      "Don't set body copy, headings or buttons in Martian Mono.",
+      "Don't add glow, blurred halos or coloured shadows.",
+      "Don't lay ribs under paragraphs of body copy; fade them out.",
+      "Don't round corners or introduce a second surface material.",
+      "Don't use more than one colour family per container."
+    ]
+  }
+}
