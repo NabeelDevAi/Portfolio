@@ -27,7 +27,7 @@ Production-scale AI plus full-stack ownership, from research to deployment and m
 
 ## Operating Context
 
-Now based in Middlesbrough, UK (as of Oct 2026); British national born in the UK, raised in Kuwait, studied and worked in Karachi. The site should read as global, not tied to one country. Content lives in `content.md` (profile, experience, skills) and `projects/*.md` (aegiss, am-violation, disano, dominica, eventbridgeai, nehohouse, pyranex, seatswap, snipeitnow, speechpro, zetpay). `NabeelSohail-CV.pdf` is the downloadable CV. `AUDIT.md` and `Task.md` hold an earlier UX/UI audit backlog (nav gaps, CTA count, reduced motion, scroll offset).
+Now based in Middlesbrough, UK (as of Oct 2026), studying an MSc in AI with Data Analytics at Teesside University. Current role: Senior AI & Web Engineer / Technical Lead at Tegnol Agency (freelance, remote, since Jan 2025). Left FTech Solutions Aug 2026. Co-Founder & System Architect of EventBridge AI (shown as a project). Open to AI engineering roles in the UK and remote. Contact: nabeel.dev.ai@gmail.com, linkedin.com/in/nabeeldevai, github.com/NabeelDevAi, WhatsApp +92-345-3628868, UK phone +44 7448 685891. Home street address is deliberately not published; British national born in the UK, raised in Kuwait, studied and worked in Karachi. The site should read as global, not tied to one country. Content lives in `content.md` (profile, experience, skills) and `projects/*.md` (aegiss, am-violation, disano, dominica, eventbridgeai, nehohouse, pyranex, seatswap, snipeitnow, speechpro, zetpay). `NabeelSohail-CV.pdf` is the downloadable CV. `AUDIT.md` and `Task.md` hold an earlier UX/UI audit backlog (nav gaps, CTA count, reduced motion, scroll offset).
 
 ## Capabilities and Constraints
 
@@ -42,7 +42,7 @@ Name: Mohammad Nabeel Sohail (goes by Nabeel). Voice in current content is first
 
 ## Evidence on Hand
 
-Real roles and dates in `content.md`, 11 project write-ups in `projects/`, CV PDF, profile photo, OG image. No testimonials, client logos or quantified benchmarks are confirmed; future work must not invent them.
+Real roles and dates in `content.md`, 11 project write-ups in `projects/`, CV PDF, profile photo, OG image. Four LinkedIn recommendations are quoted as excerpts (Muhammad Nadir, Syed Farhan Ahmed, Kashan Khan Ghori, Laiba Rafiq); the full set lives on LinkedIn. No client logos or quantified benchmarks are confirmed; future work must not invent them.
 
 ## Product Principles
 

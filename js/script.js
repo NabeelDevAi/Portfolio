@@ -191,104 +191,118 @@ revealEls.forEach(el => revealObs ? revealObs.observe(el) : el.classList.add('vi
   loop();
 })();
 
-// ---- TERMINAL TYPER ----
-(function initTerminal() {
-  const cmdEl    = document.getElementById('termCmd');
-  const outputEl = document.getElementById('termOutput');
-  const statusEl = document.getElementById('statusText');
-  if (!cmdEl) return;
+// ---- ABOUT TERMINAL: tabbed fact sheet that types itself ----
+(function initTerm2() {
+  const root = document.getElementById('term2');
+  if (!root) return;
+  const cmdEl = document.getElementById('t2Cmd');
+  const outEl = document.getElementById('t2Out');
+  const statusEl = document.getElementById('t2Status');
+  const tabs = [...root.querySelectorAll('.t2-tab')];
 
-  const sequences = [
-    {
-      cmd: 'nabeel --whoami',
-      output: [
-        { label: 'role',    val: 'AI Team Lead · Senior Engineer' },
-        { label: 'company', val: 'FTech Solutions — Dawat-e-Islami' },
-        { label: 'based',   val: 'Middlesbrough, UK · British national' },
-        { label: 'status',  val: 'open to roles and projects worldwide' },
-        { label: 'scale',   val: 'platforms serving millions of users' },
-      ]
-    },
-    {
-      cmd: 'nabeel --stack',
-      output: [
-        { label: 'ai',       val: 'LLMs · RAG · Agentic AI · NLP · Vision' },
-        { label: 'backend',  val: 'Python · Django · FastAPI · Flask' },
-        { label: 'fullstack',val: 'MERN · TypeScript · REST APIs' },
-        { label: 'infra',    val: 'AWS · Docker · CI/CD · PostgreSQL' },
-      ]
-    },
-    {
-      cmd: 'nabeel --leadership',
-      output: [
-        { label: 'ieee',  val: 'Vice Chair @ IEEE SSUET SB' },
-        { label: 'acm',   val: 'Vice Chair @ ACM SSUET' },
-        { label: 'gdg',   val: 'Comm & Marketing Lead @ GDGoC SSUET' },
-        { label: 'smec',  val: 'Director Geeks & Mentor @ SMEC\'25' },
-      ]
+  const data = {
+    whoami: { cmd: 'whoami', rows: [
+      ['name', 'Mohammad Nabeel Sohail'],
+      ['role', 'Senior AI & Web Engineer · Technical Lead'],
+      ['org', 'Tegnol Agency'],
+      ['studying', 'MSc AI with Data Analytics, Teesside University'],
+      ['based', 'Middlesbrough, UK'],
+      ['path', 'UK → Kuwait → Karachi → UK'],
+      ['rights', 'British national, full right to work in the UK'],
+    ] },
+    journey: { cmd: 'journey --timeline', rows: [
+      ['2021', 'BSCS begins, SSUET Karachi'],
+      ['2022', 'Computer Science lecturer, SAF Collegiate'],
+      ['2023', 'AI team, FTech Solutions'],
+      ['2025', 'Technical Lead, Tegnol Agency'],
+      ['now', 'MSc AI with Data Analytics, Teesside'],
+    ] },
+    communities: { cmd: 'ls communities/', rows: [
+      ['ieee', 'Vice Chair, SSUET Student Branch'],
+      ['acm', 'Vice Chair, SSUET Chapter'],
+      ['gdgoc', 'Communication & Marketing Lead, SSUET'],
+      ['smec', "Director & Mentor '25 · Team Lead '24"],
+      ['nasa', 'Core team, Space Apps Karachi'],
+    ] },
+    ask: { cmd: 'ask --about', rows: [
+      ['topics', 'AI · machine learning · GenAI · web development'],
+      ['also', 'leadership · mentoring · community building'],
+      ['values', 'quality over quantity · purpose over prestige'],
+      ['reach', 'nabeel.dev.ai@gmail.com'],
+    ] },
+  };
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let current = 'whoami', run = 0, timer = null, auto = !reduce, started = false;
+
+  const rowEl = r => {
+    const d = document.createElement('div');
+    const k = document.createElement('span'); k.className = 't2-k'; k.textContent = r[0];
+    const v = document.createElement('span'); v.className = 't2-v'; v.textContent = r[1];
+    d.append(k, v);
+    return d;
+  };
+  const setTab = name => tabs.forEach(t => {
+    const on = t.dataset.cmd === name;
+    t.setAttribute('aria-selected', on);
+    t.tabIndex = on ? 0 : -1;
+  });
+
+  function show(name, animate) {
+    const id = ++run;
+    clearTimeout(timer);
+    current = name;
+    setTab(name);
+    const { cmd, rows } = data[name];
+    outEl.textContent = '';
+    if (!animate) {
+      cmdEl.textContent = cmd;
+      rows.forEach(r => outEl.appendChild(rowEl(r)));
+      statusEl.textContent = 'exit 0';
+      return;
     }
-  ];
-
-  const statusMessages = [
-    'Initializing profile...',
-    'Loading engineer data...',
-    'Systems online.',
-    'Ready to build.',
-    'British National',
-    'Based in Middlesbrough, UK',
-    'Open to Relocation & Remote',
-  ];
-
-  if (reduceMotion) {
-    cmdEl.textContent = sequences[0].cmd;
-    outputEl.innerHTML = sequences[0].output.map(o => `<div><span class="to-line">${o.label}:</span> <span class="to-val">${o.val}</span></div>`).join('');
-    return;
-  }
-
-  let seqIdx = 0, charIdx = 0, lineIdx = 0, phase = 'typing';
-
-  function typeChar() {
-    const seq = sequences[seqIdx];
-    const cmd = seq.cmd;
-
-    if (phase === 'typing') {
-      if (charIdx <= cmd.length) {
-        cmdEl.textContent = cmd.slice(0, charIdx++);
-        setTimeout(typeChar, 55 + Math.random() * 30);
-      } else {
-        phase = 'output'; lineIdx = 0;
-        setTimeout(showNextLine, 300);
-      }
-    }
-  }
-
-  function showNextLine() {
-    const seq = sequences[seqIdx];
-    if (lineIdx < seq.output.length) {
-      const { label, val } = seq.output[lineIdx++];
-      const line = document.createElement('div');
-      line.innerHTML = `<span class="to-line">${label}:</span> <span class="to-val">${val}</span>`;
-      line.style.opacity = '0';
-      line.style.transform = 'translateX(-6px)';
-      line.style.transition = 'all 0.3s ease';
-      outputEl.appendChild(line);
-      setTimeout(() => { line.style.opacity = '1'; line.style.transform = 'none'; }, 20);
-      setTimeout(showNextLine, 280);
-    } else {
-      setTimeout(nextSequence, 2800);
-    }
-  }
-
-  function nextSequence() {
-    seqIdx = (seqIdx + 1) % sequences.length;
-    charIdx = 0; lineIdx = 0; phase = 'typing';
     cmdEl.textContent = '';
-    outputEl.innerHTML = '';
-    setTimeout(typeChar, 400);
+    statusEl.textContent = 'running…';
+    let i = 0;
+    const type = () => {
+      if (id !== run) return;
+      if (i <= cmd.length) { cmdEl.textContent = cmd.slice(0, i++); timer = setTimeout(type, 38 + Math.random() * 30); return; }
+      let n = 0;
+      const line = () => {
+        if (id !== run) return;
+        if (n < rows.length) {
+          const el = rowEl(rows[n++]);
+          outEl.appendChild(el);
+          requestAnimationFrame(() => el.classList.add('on'));
+          timer = setTimeout(line, 130);
+        } else {
+          statusEl.textContent = 'exit 0';
+          if (auto) timer = setTimeout(() => {
+            const names = Object.keys(data);
+            show(names[(names.indexOf(current) + 1) % names.length], true);
+          }, 6500);
+        }
+      };
+      timer = setTimeout(line, 220);
+    };
+    type();
   }
 
-  setTimeout(typeChar, 800);
+  tabs.forEach(t => {
+    t.addEventListener('click', () => { auto = false; show(t.dataset.cmd, !reduce); });
+    t.addEventListener('keydown', e => {
+      const k = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+      if (!k) return;
+      e.preventDefault();
+      const i = (tabs.indexOf(t) + k + tabs.length) % tabs.length;
+      tabs[i].focus(); auto = false; show(tabs[i].dataset.cmd, !reduce);
+    });
+  });
 
+  if (reduce || !('IntersectionObserver' in window)) { show('whoami', false); return; }
+  new IntersectionObserver((es, o) => {
+    if (es[0].isIntersecting && !started) { started = true; o.disconnect(); show('whoami', true); }
+  }, { threshold: 0.35 }).observe(root);
 })();
 
 // ---- ACTIVE NAV HIGHLIGHTING ----
@@ -352,19 +366,38 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     btnLoad.style.display = 'inline-flex';
     submitBtn.disabled = true;
 
-    const sub  = subject ? '[Portfolio] ' + subject + ' — ' + name : '[Portfolio] Message from ' + name;
-    const body = 'Name: ' + name + '\nEmail: ' + email + '\n\n' + message;
-    const url  = 'mailto:nabeel.dev.ai@gmail.com?subject=' + encodeURIComponent(sub) + '&body=' + encodeURIComponent(body);
-
-    setTimeout(function() {
-      window.location.href = url;
+    const showMsg = (ok, html) => {
+      successEl.classList.toggle('is-error', !ok);
+      successEl.innerHTML = '<i class="fas ' + (ok ? 'fa-check-circle' : 'fa-triangle-exclamation') + '"></i> ' + html;
+      successEl.style.display = 'flex';
+      clearTimeout(showMsg.t);
+      showMsg.t = setTimeout(function() { successEl.style.display = 'none'; }, ok ? 8000 : 14000);
+    };
+    const done = () => {
       btnText.style.display = 'inline-flex';
       btnLoad.style.display = 'none';
       submitBtn.disabled = false;
-      successEl.style.display = 'flex';
-      form.reset();
-      setTimeout(function() { successEl.style.display = 'none'; }, 6000);
-    }, 900);
+    };
+
+    const data = new FormData(form);
+    data.set('subject', (subject ? '[Portfolio] ' + subject : '[Portfolio] Message') + ' — ' + name);
+    data.set('topic', subject || 'Not specified');
+
+    fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body: data })
+      .then(r => r.json().then(j => ({ ok: r.ok && j.success, j })))
+      .then(res => {
+        done();
+        if (res.ok) {
+          form.reset();
+          showMsg(true, 'Message sent. Thank you, ' + name.split(' ')[0] + '. I will reply to ' + email + ' soon.');
+        } else {
+          showMsg(false, 'Could not send the message. Please email <a href="mailto:nabeel.dev.ai@gmail.com">nabeel.dev.ai@gmail.com</a> directly.');
+        }
+      })
+      .catch(() => {
+        done();
+        showMsg(false, 'Network problem, the message was not sent. Please email <a href="mailto:nabeel.dev.ai@gmail.com">nabeel.dev.ai@gmail.com</a> directly.');
+      });
   });
 })();
 
@@ -412,3 +445,102 @@ document.querySelectorAll('[data-subject]').forEach(a => {
     setTimeout(() => { const n = document.getElementById('cf-name'); if (n) n.focus({ preventScroll: true }); }, 400);
   });
 });
+
+// ---- SERVICES CONSOLE: tabs built from panels ----
+(() => {
+  const box = document.getElementById('svcConsole');
+  if (!box) return;
+  const panels = [...box.querySelectorAll('.svc-panel')];
+  const list = document.createElement('div');
+  list.className = 'svc-tabs';
+  list.setAttribute('role', 'tablist');
+  list.setAttribute('aria-orientation', 'vertical');
+  const stage = document.createElement('div');
+  stage.className = 'svc-stage';
+  const tabs = panels.map((p, i) => {
+    const t = document.createElement('button');
+    t.type = 'button';
+    t.className = 'svc-tab';
+    t.id = 'svc-tab-' + i;
+    t.setAttribute('role', 'tab');
+    t.setAttribute('aria-controls', 'svc-panel-' + i);
+    t.innerHTML = '<span class="svc-n">' + p.dataset.idx + '</span><span></span>';
+    t.lastChild.textContent = p.querySelector('h3').textContent;
+    p.id = 'svc-panel-' + i;
+    p.setAttribute('role', 'tabpanel');
+    p.setAttribute('aria-labelledby', t.id);
+    stage.appendChild(p);
+    list.appendChild(t);
+    return t;
+  });
+  const select = (i, focus) => {
+    tabs.forEach((t, j) => {
+      const on = i === j;
+      t.setAttribute('aria-selected', on);
+      t.tabIndex = on ? 0 : -1;
+      panels[j].hidden = !on;
+    });
+    if (focus) tabs[i].focus();
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => select(i));
+    t.addEventListener('keydown', e => {
+      const k = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+      if (k) { e.preventDefault(); select((i + k + tabs.length) % tabs.length, true); }
+    });
+  });
+  box.append(list, stage);
+  box.classList.add('is-ready');
+  select(0);
+})();
+
+// ---- RECOMMENDATIONS: carousel + read-full modal ----
+(() => {
+  const track = document.getElementById('quotesTrack');
+  const modal = document.getElementById('quoteModal');
+  if (!track || !modal) return;
+  const nav = document.getElementById('quotesNav');
+  const prev = document.getElementById('qPrev');
+  const next = document.getElementById('qNext');
+  const quotes = [...track.querySelectorAll('.quote')];
+
+  const open = q => {
+    document.getElementById('qmText').textContent = q.querySelector('blockquote').textContent;
+    document.getElementById('qmName').textContent = q.querySelector('strong').textContent;
+    document.getElementById('qmMeta').textContent = q.querySelector('figcaption span').textContent;
+    if (modal.showModal) modal.showModal(); else modal.setAttribute('open', '');
+  };
+  const addMore = () => {
+    quotes.forEach(q => {
+      const bq = q.querySelector('blockquote');
+      const had = q.querySelector('.q-more');
+      const cut = bq.scrollHeight > bq.clientHeight + 1;
+      if (cut && !had) {
+        const b = document.createElement('button');
+        b.type = 'button'; b.className = 'q-more'; b.textContent = 'Read full >';
+        b.addEventListener('click', () => open(q));
+        bq.after(b);
+      } else if (!cut && had) had.remove();
+    });
+  };
+  const update = () => {
+    const over = track.scrollWidth > track.clientWidth + 2;
+    nav.hidden = !over;
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+  };
+  const step = dir => track.scrollBy({ left: dir * (quotes[0].offsetWidth + 20), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  prev.addEventListener('click', () => step(-1));
+  next.addEventListener('click', () => step(1));
+  track.addEventListener('scroll', update, { passive: true });
+  track.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
+  });
+  modal.addEventListener('click', e => { if (e.target === modal) modal.close(); });
+  document.getElementById('qmClose').addEventListener('click', () => modal.close());
+  const refresh = () => { addMore(); update(); };
+  window.addEventListener('resize', refresh);
+  window.addEventListener('load', refresh);
+  refresh();
+})();

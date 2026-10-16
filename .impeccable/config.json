@@ -11,6 +11,15 @@
         ],
         "createdAt": "2026-10-16T08:26:07.528Z",
         "reason": "user asked to restore the original glowing tech-terminal look; glow is the state feedback signature"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-16T12:23:28.187Z",
+        "reason": "Mono console labels (stack layer names, About sub-labels, case-study labels) are deliberately small h3/h4 headings; real hierarchy comes from the display h2 titles."
       }
     ]
   }
