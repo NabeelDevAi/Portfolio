@@ -66,18 +66,21 @@ Answer what you can. Anything left blank stays out.
 
 ## 7. Technical and quality
 
-- [ ] **Performance:** three Google font families plus Font Awesome load from CDNs. Subset or self-host the fonts and drop the icon font if possible. Check `profile.jpg` size. Check the particle canvas on low-end phones.
-- [ ] **Loader length (about 3.5 s) on every load.** Consider the full version on the first visit and a faster one afterwards, or a shorter version overall.
+- [x] Fonts self-hosted, Font Awesome subset to 8 KB, particle canvas pauses off-screen. Still open: check `profile.jpg` size and the canvas on a real low-end phone.
+- [ ] **New icons need a regenerated subset** (`css/icons.css` only has the glyphs in use).
+- [x] Loader: full on first visit, about 30% length after that (localStorage `nos-booted`).
 - [ ] **No 404 page, `sitemap.xml` or `robots.txt`.**
 - [ ] **Cross-browser test:** Safari and Firefox (the `<dialog>`, `clip-path` CRT effect, the `translate` property for hero depth, `backdrop-filter`), plus real phones.
-- [ ] **Accessibility pass:** screen reader on the command palette, terminal tabs and testimonial modal. Keyboard-only run-through. Check the 11px mono labels on phones.
+- [ ] **Accessibility pass:** screen reader on the command palette, terminal tabs and testimonial modal. Keyboard-only run-through. 11px mono labels were raised to 12px.
 - [ ] **Custom cursor** hides the native one. Decide if you want to keep it.
 - [ ] **Small visual quirks:**
-  - Stray `·` separators at the end of wrapped lines in the tech stack.
+  - [x] Stray `·` separators in the tech stack (now leading bullets).
   - Experience cards are tight on phones inside the window.
   - Testimonial card captions sit at slightly different heights.
-  - The dock scrolls sideways on phones (11 icons).
+  - [x] Dock still scrolls sideways on phones, but now centres the active icon and fades its edges.
   - Stack, Services and About each have a panel inside a window (the detector flags this; it is deliberate).
+
+- [ ] **3D layer needs real-device testing.** Frame rate on a mid-range Android phone and an older laptop; if it stutters, lower `N`, `TN`, `SN` or the DPR cap in `js/fx3d.js`. Also check Safari (import maps need 16.4+; older versions fall back to the 2D site).
 
 ## 8. Cleanup
 

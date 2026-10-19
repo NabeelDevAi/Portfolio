@@ -611,6 +611,9 @@ document.querySelectorAll('[data-subject]').forEach(a => {
     const sec = document.getElementById(id);
     typeApp(sec.dataset.app);
     dockItems.forEach(a => a.classList.toggle('active', a.dataset.sec === id));
+    // keep the active icon in view when the dock scrolls sideways (phones)
+    const act = dockItems.find(a => a.dataset.sec === id);
+    if (act && dock.scrollWidth > dock.clientWidth) dock.scrollTo({ left: act.offsetLeft - (dock.clientWidth - act.offsetWidth) / 2, behavior: reduceMotion ? 'auto' : 'smooth' });
     document.querySelectorAll('.win').forEach(w => w.classList.toggle('is-active', sec.contains(w)));
   };
   let raf = 0;

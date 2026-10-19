@@ -63,8 +63,9 @@
 
   <link rel="preload" href="fonts/Syne-normal-3.woff2" as="font" type="font/woff2" crossorigin/>
   <link rel="preload" href="fonts/DMSans-normal-1.woff2" as="font" type="font/woff2" crossorigin/>
+  <script type="importmap">{"imports":{"three":"./js/vendor/three.module.min.js","three/addons/":"./js/vendor/addons/"}}</script>
   <link rel="stylesheet" href="css/fonts.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/icons.css"/>
   <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
@@ -108,6 +109,7 @@
 
   <a href="#main-content" class="skip-link">Skip to content</a>
 
+  <div class="warp-fx" aria-hidden="true"></div>
   <div class="cursor" id="cursor"></div>
   <div class="cursor-follower" id="cursorFollower"></div>
 
@@ -1033,6 +1035,7 @@
         <h2>Let's <span class="accent">Connect</span></h2>
         <p>Whether it's an international role, a collaboration, a project, or just a genuine tech conversation.</p>
       </div>
+      <div class="sig3d" id="sig3d" aria-hidden="true" title="Click me"></div>
       <div class="paths reveal">
         <article class="path">
           <h3>Hiring</h3>

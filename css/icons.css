@@ -1,0 +1,65 @@
+/* Font Awesome Free 6.5 (CC BY 4.0 icons, SIL OFL fonts), subset to the icons this site uses */
+.fas,.fab{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-style:normal;font-variant:normal;line-height:1;text-rendering:auto}
+.fas{font-family:"FA Solid";font-weight:900}
+.fab{font-family:"FA Brands";font-weight:400}
+.fa-spin{animation:fa-spin 2s infinite linear}
+@keyframes fa-spin{to{transform:rotate(360deg)}}
+@font-face{font-family:"FA Solid";font-style:normal;font-weight:900;font-display:block;src:url(../fonts/fa-solid-subset.woff2) format("woff2")}
+@font-face{font-family:"FA Brands";font-style:normal;font-weight:400;font-display:block;src:url(../fonts/fa-brands-subset.woff2) format("woff2")}
+.fa-arrow-down::before{content:"\f063"}
+.fa-arrow-left::before{content:"\f060"}
+.fa-arrow-right::before{content:"\f061"}
+.fa-arrow-up::before{content:"\f062"}
+.fa-arrow-up-right-from-square::before{content:"\f08e"}
+.fa-aws::before{content:"\f375"}
+.fa-briefcase::before{content:"\f0b1"}
+.fa-building::before{content:"\f1ad"}
+.fa-certificate::before{content:"\f0a3"}
+.fa-chalkboard-teacher::before{content:"\f51c"}
+.fa-chart-bar::before{content:"\f080"}
+.fa-check-circle::before{content:"\f058"}
+.fa-code::before{content:"\f121"}
+.fa-coins::before{content:"\f51e"}
+.fa-comments::before{content:"\f086"}
+.fa-copy::before{content:"\f0c5"}
+.fa-crosshairs::before{content:"\f05b"}
+.fa-download::before{content:"\f019"}
+.fa-envelope::before{content:"\f0e0"}
+.fa-external-link-alt::before{content:"\f35d"}
+.fa-file-alt::before{content:"\f15c"}
+.fa-flag::before{content:"\f024"}
+.fa-folder-open::before{content:"\f07c"}
+.fa-github::before{content:"\f09b"}
+.fa-globe::before{content:"\f0ac"}
+.fa-google::before{content:"\f1a0"}
+.fa-graduation-cap::before{content:"\f19d"}
+.fa-handshake::before{content:"\f2b5"}
+.fa-home::before{content:"\f015"}
+.fa-house::before{content:"\f015"}
+.fa-js-square::before{content:"\f3b9"}
+.fa-layer-group::before{content:"\f5fd"}
+.fa-lightbulb::before{content:"\f0eb"}
+.fa-linkedin-in::before{content:"\f0e1"}
+.fa-location-dot::before{content:"\f3c5"}
+.fa-magnifying-glass::before{content:"\f002"}
+.fa-map-marked-alt::before{content:"\f5a0"}
+.fa-microchip::before{content:"\f2db"}
+.fa-microsoft::before{content:"\f3ca"}
+.fa-network-wired::before{content:"\f6ff"}
+.fa-paper-plane::before{content:"\f1d8"}
+.fa-phone::before{content:"\f095"}
+.fa-plane::before{content:"\f072"}
+.fa-robot::before{content:"\f544"}
+.fa-rocket::before{content:"\f135"}
+.fa-school::before{content:"\f549"}
+.fa-shield-alt::before{content:"\f3ed"}
+.fa-spinner::before{content:"\f110"}
+.fa-star::before{content:"\f005"}
+.fa-terminal::before{content:"\f120"}
+.fa-triangle-exclamation::before{content:"\f071"}
+.fa-trophy::before{content:"\f091"}
+.fa-university::before{content:"\f19c"}
+.fa-user::before{content:"\f007"}
+.fa-users::before{content:"\f0c0"}
+.fa-whatsapp::before{content:"\f232"}
+.fa-xmark::before{content:"\f00d"}

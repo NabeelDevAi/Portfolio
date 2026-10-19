@@ -166,6 +166,28 @@ Panel fill, 1px ghost border, 8px radius. Cyan mono stage label, secondary body,
 ### Signature: Console atmosphere
 Boot loader, terminal typer, HUD frame, particle field, noise grain and scanline sweep. All skip or simplify under `prefers-reduced-motion`.
 
+## Motion
+
+GSAP 3.12 + ScrollTrigger, vendored in `js/vendor/`, choreographed in `js/motion.js`. `html.gx` marks it active; without GSAP or under `prefers-reduced-motion` the page is static (CSS reveal fallbacks in `script.js`).
+
+- **Easing and time:** `expo.out` for entrances (about 1s), `power3.out` for pointer follow, `sine.inOut` for ambient drift. Tokens: `--ease-out`, `--ease-io`, `--dur-1..3`.
+- **Hero:** headline rises per character from a mask, tagline per word, portrait wipes in. Starts when the loader sets `body.booted`. Behind it: aurora blobs (paused off-screen), a cursor light, grain, vignette. Layers parallax at different rates on scroll-out.
+- **Sections:** headings draw their rule, then reveal the title; windows and cards reveal in staggered batches. A scroll-progress line runs along the top.
+- **Interaction:** magnetic buttons (use the `translate` property so hover transforms still work), cursor-tracked spotlight inside cards, dock magnification.
+- **Rule:** motion must explain structure (arrival, hierarchy, focus). No ambient loop runs while off-screen.
+
+## 3D layer
+
+three.js r160, vendored in `js/vendor/` (import map in `index.html`), lazy-loaded by `js/motion.js` after the boot loader. Code in `js/fx3d.js`. Skipped when WebGL is missing, `prefers-reduced-motion` is set, or data-saver / 2 GB devices; failures leave the 2D site intact.
+
+- **World canvas** (`.fx3d-canvas`, fixed, `z-index: -1`): a neural core around the hero portrait (nodes, links with travelling pulses, cursor attraction). Scrolling flies the camera out through the core and down a tunnel with one glowing gate per section (`section[data-app]` order); the tint shifts blue, cyan, violet per section. Scroll velocity stretches starlight into warp streaks and drives `--warp` for the edge flash (`.warp-fx`).
+- **Signature object:** chrome extruded "N" with iridescent clearcoat and orbit rings in `#sig3d` (contact section). Own renderer, renders only while visible. Click to spin.
+- **Holographic cards:** project, why-me and leadership cards tilt in 3D with a foil sheen and inner parallax (`.holo`, CSS variables set from pointer position).
+- With `html.fx3d`, section backgrounds go transparent and windows drop to about 66% opacity so the world shows through.
+
+## Assets
+Fonts (Syne, DM Sans, JetBrains Mono) are self-hosted in `fonts/` via `css/fonts.css`. Icons are a Font Awesome Free subset in `css/icons.css`; when adding an icon, regenerate the subset (it only contains the glyphs in use).
+
 ## Do's and Don'ts
 
 ### Do:

@@ -171,6 +171,49 @@
     });
   }
 
+  /* ---------- holographic cards: 3D tilt, foil sheen, inner parallax ---------- */
+  if (hasHover) {
+    $('.proj-card, .why-card, .lead-card').forEach(card => {
+      card.classList.add('holo');
+      const foil = document.createElement('span');
+      foil.className = 'holo-foil';
+      foil.setAttribute('aria-hidden', 'true');
+      card.appendChild(foil);
+      const max = card.classList.contains('proj-card') ? 7 : 5;
+      card.addEventListener('pointermove', e => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        card.style.setProperty('--ry', ((x - 0.5) * 2 * max).toFixed(2) + 'deg');
+        card.style.setProperty('--rx', ((0.5 - y) * 2 * max).toFixed(2) + 'deg');
+        card.style.setProperty('--px', ((x - 0.5) * 2).toFixed(3));
+        card.style.setProperty('--py', ((y - 0.5) * 2).toFixed(3));
+        card.style.setProperty('--fx', (x * 100).toFixed(1) + '%');
+        card.style.setProperty('--fy', (y * 100).toFixed(1) + '%');
+        card.classList.add('is-holo');
+      });
+      card.addEventListener('pointerleave', () => {
+        card.classList.remove('is-holo');
+        ['--rx', '--ry', '--px', '--py'].forEach(k => card.style.removeProperty(k));
+      });
+    });
+  }
+
+  /* ---------- WebGL layer (lazy; any failure leaves the 2D site as is) ---------- */
+  const canGL = (() => { try { const c = document.createElement('canvas'); return !!(c.getContext('webgl2') || c.getContext('webgl')); } catch (e) { return false; } })();
+  const conn = navigator.connection || {};
+  const lowEnd = conn.saveData || (navigator.deviceMemory && navigator.deviceMemory <= 2);
+  if (canGL && !lowEnd) {
+    const mobile = window.matchMedia('(max-width: 899px)').matches || !hasHover;
+    whenBooted(() => {
+      const go = () => import('./fx3d.js').then(m => {
+        m.startWorld({ mobile });
+        const host = document.getElementById('sig3d');
+        if (host) { try { m.startSignature(host, { mobile }); } catch (e) { host.classList.remove('is-live'); } }
+      }).catch(err => console.warn('fx3d disabled:', err));
+      (window.requestIdleCallback || (f => setTimeout(f, 400)))(go, { timeout: 1500 });
+    });
+  }
+
   // layout shifts from late fonts/images move trigger positions
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => ScrollTrigger.refresh());
   window.addEventListener('load', () => ScrollTrigger.refresh());
