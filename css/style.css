@@ -3752,3 +3752,78 @@ section[data-app]:not(.hero) .win { margin: 0; }
 .navbar { transition: transform .8s var(--ease) .1s, border-color .3s; }
 .dock { transition: transform .9s var(--ease) .25s; }
 @media (prefers-reduced-motion: reduce) { .ld-floor, .ld-scan::after, .ld-r-ticks, .ld-r-dash { animation: none; } }
+
+/* ================================================
+   MOTION LAYER (driven by js/motion.js; html.gx = GSAP active)
+   ================================================ */
+:root {
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-1: 0.25s;
+  --dur-2: 0.6s;
+  --dur-3: 1s;
+}
+
+/* scroll progress, hangs off the menu bar */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 120;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transform: scaleX(0); transform-origin: 0 50%; pointer-events: none;
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* hero atmosphere: aurora, cursor light, grain, vignette */
+.hero-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.hero-bg::after {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(120% 90% at 50% 40%, transparent 45%, rgba(5, 10, 15, .85) 100%);
+}
+.aura { position: absolute; border-radius: 50%; will-change: transform; }
+.aura-a { width: 62vmax; height: 62vmax; left: -18vmax; top: -26vmax;
+  background: radial-gradient(closest-side, rgba(58, 78, 255, .42), transparent 70%); }
+.aura-b { width: 54vmax; height: 54vmax; right: -16vmax; top: -6vmax;
+  background: radial-gradient(closest-side, rgba(0, 200, 255, .24), transparent 70%); }
+.aura-c { width: 48vmax; height: 48vmax; left: 28%; bottom: -34vmax;
+  background: radial-gradient(closest-side, rgba(108, 99, 255, .30), transparent 70%); }
+.hero-spot {
+  position: absolute; left: 0; top: 0; width: 520px; height: 520px; margin: -260px 0 0 -260px;
+  background: radial-gradient(closest-side, rgba(0, 200, 255, .13), transparent 70%);
+  opacity: 0; will-change: transform, opacity;
+}
+.hero-grain {
+  position: absolute; inset: 0; opacity: .07; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+@media (max-width: 767px) { .hero-spot { display: none; } .aura-c { display: none; } }
+
+/* split headline: masked lines, per-character rise */
+.gx .ht-line { animation: none; opacity: 1; transform: none; }
+.ln { display: block; overflow: clip; padding: .06em .08em .12em; margin: -.06em -.08em -.12em; }
+.ch { display: inline-block; will-change: transform; }
+.ht-accent .ch { text-shadow: 0 0 40px var(--accent-glow); }
+
+/* reveal handoff: no CSS transition while GSAP owns the transform */
+.gx .reveal:not(.rv-done) { transition: none !important; }
+.gx .sec-head .sh-rule { transform-origin: 0 50%; }
+
+/* card spotlight (cursor-tracked light inside a card) */
+.spot-glow {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none; border-radius: inherit;
+  background: radial-gradient(340px circle at var(--sx, 50%) var(--sy, 50%), rgba(0, 200, 255, .10), rgba(58, 78, 255, .06) 40%, transparent 70%);
+  opacity: 0; transition: opacity .35s var(--ease-out);
+}
+:is(.proj-card, .why-card, .lead-card, .quote):hover > .spot-glow { opacity: 1; }
+
+/* keep the discipline strip clear of the fixed dock */
+.hero-credits { padding-bottom: 84px; }
+
+/* consistent keyboard focus */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent-2); outline-offset: 3px; border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aura, .hero-spot, .scroll-progress { display: none; }
+  .ch, .ln { transform: none !important; }
+  .ht-line, .hero-status { animation: none !important; opacity: 1 !important; transform: none !important; }
+}

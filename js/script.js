@@ -4,7 +4,7 @@
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// ---- LOADER: NABEEL/OS boot sequence (runs on every load) ----
+// ---- LOADER: NABEEL/OS boot sequence (full on first visit, short on return visits) ----
 let skipped = false;
 (function initLoader() {
   const loader = document.getElementById('loader');
@@ -18,6 +18,10 @@ let skipped = false;
   const logoEl = document.getElementById('ldLogo');
   const skipBtn = document.getElementById('loaderSkip');
   const C = 2 * Math.PI * 86;
+
+  let seen = false;
+  try { seen = localStorage.getItem('nos-booted') === '1'; localStorage.setItem('nos-booted', '1'); } catch (e) {}
+  const pace = seen ? 0.3 : 1;
 
   let closed = false;
   const close = () => {
@@ -79,13 +83,13 @@ let skipped = false;
     addLog(s.log);
     if (i === 5 || i === steps.length) { logoEl.classList.remove('glitch'); void logoEl.offsetWidth; logoEl.classList.add('glitch'); }
     if (i < steps.length) {
-      setTimeout(next, 190 + Math.random() * 120);
+      setTimeout(next, (190 + Math.random() * 120) * pace);
     } else {
-      setTimeout(() => { loader.classList.add('ready'); }, 250);
-      setTimeout(close, 1250);
+      setTimeout(() => { loader.classList.add('ready'); }, 250 * pace);
+      setTimeout(close, 1250 * pace);
     }
   };
-  setTimeout(next, 350);
+  setTimeout(next, 350 * pace);
 })();
 
 // ---- CUSTOM CURSOR ----
@@ -143,7 +147,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
 // ---- REVEAL ON SCROLL ----
 const revealEls = document.querySelectorAll('.reveal');
-const revealObs = ('IntersectionObserver' in window && !reduceMotion) ? new IntersectionObserver(entries => {
+const revealObs = ('IntersectionObserver' in window && !reduceMotion && !window.gsap) ? new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.10, rootMargin: '0px 0px -40px 0px' }) : null;
 revealEls.forEach(el => revealObs ? revealObs.observe(el) : el.classList.add('visible'));
@@ -206,13 +210,21 @@ revealEls.forEach(el => revealObs ? revealObs.observe(el) : el.classList.add('vi
     }
   }
 
+  // only animate while the hero is on screen and the tab is visible
+  let inView = true, running = false;
   function loop() {
+    if (!inView || document.hidden) { running = false; return; }
     ctx.clearRect(0, 0, W, H);
     particles.forEach(p => { p.update(); p.draw(); });
     drawConnections();
     requestAnimationFrame(loop);
   }
-  loop();
+  const wake = () => { if (!running && inView && !document.hidden) { running = true; requestAnimationFrame(loop); } };
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([e]) => { inView = e.isIntersecting; wake(); }).observe(canvas);
+  }
+  document.addEventListener('visibilitychange', wake);
+  wake();
 })();
 
 // ---- ABOUT TERMINAL: tabbed fact sheet that types itself ----
